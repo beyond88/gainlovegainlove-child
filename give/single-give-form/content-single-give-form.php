@@ -80,9 +80,6 @@ $date = get_the_date(DATE_W3C, $form_id);
 $date2 = strtotime($date);
 $diff = $date2 - time();
 $days = floor(-$diff / (60 * 60 * 24));
-
-
-
 ?>
 <div class="campaign-page">
    <div class="campaign-page__container">
@@ -93,13 +90,23 @@ $days = floor(-$diff / (60 * 60 * 24));
                Give My Premature Twins A Chance [Big Heart for Little Ones]
             </div> -->
             <div data-v-1f1d6764="" data-v-1d3087a2="" class="campaign-banner">
-            <div data-v-1f1d6764="" class="campaign-banner__container">
-               <div data-v-1f1d6764="" class="campaign-banner__container__underlay" style="background-image: url(&quot;<?php echo $overlay_image; ?>&quot;);"></div> 
-               <div data-v-1f1d6764="" class="campaign-banner__container__preview" style="background-image: url(&quot;<?php echo $preview_image; ?>&quot;);"></div> 
-               <button data-v-3bb18fd3="" data-v-1f1d6764="" type="button" class="loading-button campaign-banner__thumbnail-container__button campaign-banner__thumbnail-container__button--mobile loading-button--flat"> 
-                  SEE MORE PHOTOS
-               </button>
-            </div>
+               <div data-v-1f1d6764="" class="campaign-banner__container">
+                  <div data-v-1f1d6764="" class="campaign-banner__container__underlay" style="background-image: url(&quot;<?php echo $overlay_image; ?>&quot;);"></div> 
+                  <div data-v-1f1d6764="" class="campaign-banner__container__preview" style="background-image: url(&quot;<?php echo $preview_image; ?>&quot;);"></div> 
+                  <button data-v-3bb18fd3="" data-v-1f1d6764="" type="button" class="loading-button campaign-banner__thumbnail-container__button campaign-banner__thumbnail-container__button--mobile loading-button--flat"> 
+                     SEE MORE PHOTOS
+                  </button>
+               </div>
+
+               <div data-v-1f1d6764="" class="campaign-banner__thumbnail-container" bis_skin_checked="1">
+                  <span data-v-1f1d6764="" class="campaign-banner__thumbnail-container__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_1000,c_scale/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/q_auto/mdzsaofstdpaulo69bgw.jpg&quot;);"></span>
+                  <span data-v-1f1d6764="" class="campaign-banner__thumbnail-container__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_1200,c_scale/f_auto/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/foj12yo7kedxaqndhonb.jpg&quot;);"></span>
+                  <span data-v-1f1d6764="" class="campaign-banner__thumbnail-container__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_1200,c_scale/f_auto/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/ewbjlzfuqb61ldkxb2pf.jpg&quot;);"></span> 
+                  <button data-v-3bb18fd3="" data-v-1f1d6764="" type="button" class="loading-button campaign-banner__thumbnail-container__button loading-button--flat">
+                     SEE MORE PHOTOS
+                  </button>
+               </div>
+
             </div>
             <a data-v-11dd9319="" data-v-1d3087a2="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/donate?recurring=true&amp;origin=campaign" class="childmed-blurb">
                <div data-v-11dd9319="" class="childmed-blurb__container">
@@ -164,31 +171,14 @@ $days = floor(-$diff / (60 * 60 * 24));
          </div>
          
          <div class="campaign-page__container__col__tab-content">
-            <script src="js/campaign-34f5c5a4dd5979b60f45dea4972b8df7-personal-campaign-page.js"></script>
             <div data-v-e9cf4a2a="">
                <div data-v-e9cf4a2a="" class="campaign-story campaign-tab">
                   <div data-v-e9cf4a2a="">
                      <div data-v-e9cf4a2a="" class="campaign-story__description">
-                        <div class="video"><iframe src="/youtube?57R4YJyh-Q0"></iframe></div>
-                        <div class="header">Please help us to bring back our extreme premature babies surviving in NICU</div>
-                        <div class="text">Myself and my wife would like to seek your help for our new born extreme premature twin babies born on 28-March-2023 at National University Hospital(NUH) Singapore and moved to Neonatal ICU for survival.</div>
-                        <div class="image"><img src="https://res.cloudinary.com/dmajhtvmd/image/upload/w_1200,c_scale/f_auto/dpr_auto/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/vk9cucjpaxjpo3bvmbel"></div>
-                        <div class="text">I am working in Singapore since 2019 as E-Pass holder with an SME and got married on 2019. My wife reached Singapore on 2020 during pandemic. Soon after she came, she had to undergo prolonged ear infection treatment occurred due to fully ruptured eardrum for months. We are the only support for both of our families back home.</div>
-                        <div class="image"><img src="https://res.cloudinary.com/dmajhtvmd/image/upload/w_1200,c_scale/f_auto/dpr_auto/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/rqex7le2nce0j2ec0gqr"></div>
-                        <div class="text">It was a joyous moment for us to find out that we are pregnant with twins on Sep 2022. Pregnancy journey was smooth till 6 months and babies were doing good. Doctor gave us fit to fly certificate for 28 weeks as we planned our delivery in India. As it is very expensive for us to deliver here and due to difficulty in looking after twins alone delivery in our home country was our only option.</div>
-                        <div class="image"><img src="https://res.cloudinary.com/dmajhtvmd/image/upload/w_1200,c_scale/f_auto/dpr_auto/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/oqjzi7hx16rqayjsy9cr"></div>
-                        <div class="text">We prepared everything for our travel on 06-Aril-2023(In 27 weeks of pregnancy), but on 28-March-2023(just before few days of our travel) my wife got contractions and bleeding. We rushed to NUH as per our gynae advice and my wife undergone emergency c-section. Our twins were born as extreme preemies and admitted to NICU (Weighing 850g and 944g respectively).</div>
-                        <div class="image"><img src="https://res.cloudinary.com/dmajhtvmd/image/upload/w_1200,c_scale/f_auto/dpr_auto/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/x7iako3doh02946m7ujt"></div>
-                        <div class="text">My wife always prayed for a baby girl and god gave us two angels. It is devastating to see that she cannot hold or see her babies after birth.<br>
-                           Our doctors are very supportive and trying to bring back our twins to normal life. They need to be in NICU for minimum of 2.5 months to 3 month which will cost us minimum 600,000 SGD for two babies. We are now paying my wife's bills and initial settlements using our small savings, But now running out of money because this huge bills which we cannot claim with insurance also.
-                        </div>
-                        <div class="image"><img src="https://res.cloudinary.com/dmajhtvmd/image/upload/w_1200,c_scale/f_auto/dpr_auto/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/fztnweukymvznzgwjau3"></div>
-                        <div class="text">We hereby requesting all kind hearted members to support our twins bring back to a healthy life. We would be grateful to you all forever and you will be in our prayers always. <br>
-                           <br>
-                           All funds raised will be managed by Give.asia and sent to the hospital directly and used for twin’s medical expenses.<br>
-                           <br>
-                           Thank you everyone !
-                        </div>
+                        <?php 
+                           //
+                           give_form_display_content($form_id, []);
+                        ?>
                      </div>
                      <div data-v-7c0a99fa="" data-v-e9cf4a2a="" class="medical-condition-card medical-condition-card__bubble medical-condition-card--without-arrow" style="visibility: hidden;">
                      
@@ -486,7 +476,6 @@ $days = floor(-$diff / (60 * 60 * 24));
                   <div data-v-586aba14="" class="campaign-cta__primary-link-container">
                      <a data-v-586aba14="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/donate?" class="campaign-cta__primary-link">
                         <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__button">
-                         
                            PLEASE DONATE
                         </button>
                      </a>
@@ -494,7 +483,6 @@ $days = floor(-$diff / (60 * 60 * 24));
                   </div>
                 
                   <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__button campaign-cta__button--orange">
-                   
                      SHARE THIS CAMPAIGN
                      <span data-v-586aba14="" data-v-3bb18fd3="" class="campaign-cta__button__count">
                      </span>
