@@ -80,6 +80,10 @@ $date = get_the_date(DATE_W3C, $form_id);
 $date2 = strtotime($date);
 $diff = $date2 - time();
 $days = floor(-$diff / (60 * 60 * 24));
+
+$author_id = get_post_field( 'post_author', $form_id );
+$avatar = get_avatar_url($author_id, ['size' => '40']);
+
 ?>
 <div class="campaign-page">
    <div class="campaign-page__container">
@@ -175,8 +179,7 @@ $days = floor(-$diff / (60 * 60 * 24));
                <div data-v-e9cf4a2a="" class="campaign-story campaign-tab">
                   <div data-v-e9cf4a2a="">
                      <div data-v-e9cf4a2a="" class="campaign-story__description">
-                        <?php 
-                           //
+                        <?php
                            give_form_display_content($form_id, []);
                         ?>
                      </div>
@@ -390,7 +393,7 @@ $days = floor(-$diff / (60 * 60 * 24));
                <div data-v-045fc0d9="" data-v-44d4f274="" class="campaign-owner">
                   <div data-v-045fc0d9="" class="campaign-owner__thumbnail-container">
                      <a data-v-045fc0d9="" href="https://give.asia/user/18waxwofxh1680084968" target="_blank">
-                        <span data-v-045fc0d9="" class="campaign-owner__thumbnail-container__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_300,c_scale/q_auto/rgauivkmguymuqzxyy96.jpg&quot;);"></span>
+                        <span data-v-045fc0d9="" class="campaign-owner__thumbnail-container__thumbnail" style="background-image: url(&quot;<?php echo $avatar; ?>&quot;);"></span>
                      </a>
                   </div>
                   <div data-v-045fc0d9="" class="campaign-owner__info">
@@ -770,7 +773,7 @@ $days = floor(-$diff / (60 * 60 * 24));
                <div data-v-4747e3fc="" data-v-1bd85365="" class="campaign-fundraiser">
                   <div data-v-4747e3fc="" class="campaign-fundraiser__header">Fundraiser</div>
                   <div data-v-045fc0d9="" data-v-4747e3fc="" class="campaign-owner campaign-fundraiser__owner">
-                     <div data-v-045fc0d9="" class="campaign-owner__thumbnail-container"><a data-v-045fc0d9="" href="https://give.asia/user/18waxwofxh1680084968" target="_blank"><span data-v-045fc0d9="" class="campaign-owner__thumbnail-container__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_300,c_scale/q_auto/rgauivkmguymuqzxyy96.jpg&quot;);"></span></a></div>
+                     <div data-v-045fc0d9="" class="campaign-owner__thumbnail-container"><a data-v-045fc0d9="" href="https://give.asia/user/18waxwofxh1680084968" target="_blank"><span data-v-045fc0d9="" class="campaign-owner__thumbnail-container__thumbnail" style="background-image: url(&quot;<?php echo $avatar; ?>&quot;);"></span></a></div>
                      <div data-v-045fc0d9="" class="campaign-owner__info">
                         <div data-v-045fc0d9="">
                            By

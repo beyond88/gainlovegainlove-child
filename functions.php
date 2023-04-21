@@ -226,3 +226,10 @@ function get_similiar_campaigns( $post_id ) {
         return $html; 
     endif; 
 }
+
+function get_author_info( $post_id ) {
+
+    $author_id = get_post_field( 'post_author', $post_id );
+    
+
+}
