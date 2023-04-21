@@ -1,3 +1,87 @@
+<?php 
+
+$form_id = get_the_ID();
+$form        = new Give_Donate_Form($form_id);
+$goal_option = give_get_meta($form->ID, '_give_goal_option', true);
+
+$goal_format         = give_get_form_goal_format($form_id);
+$price               = give_get_meta($form_id, '_give_set_price', true);
+$color               = give_get_meta($form_id, '_give_goal_color', true);
+$show_text           = isset($args['show_text']) ? filter_var($args['show_text'], FILTER_VALIDATE_BOOLEAN) : true;
+$show_bar            = isset($args['show_bar']) ? filter_var($args['show_bar'], FILTER_VALIDATE_BOOLEAN) : true;
+$goal_progress_stats = give_goal_progress_stats($form);
+
+$income = $goal_progress_stats['raw_actual'];
+$goal   = $goal_progress_stats['raw_goal'];
+
+switch ($goal_format) {
+
+    case 'donation':
+        $progress           = $goal ? round(($income / $goal) * 100, 2) : 0;
+        $progress_bar_value = $income >= $goal ? 100 : $progress;
+        break;
+
+    case 'donors':
+        $progress_bar_value = $goal ? round(($income / $goal) * 100, 2) : 0;
+        $progress           = $progress_bar_value;
+        break;
+
+    case 'percentage':
+        $progress           = $goal ? round(($income / $goal) * 100, 2) : 0;
+        $progress_bar_value = $income >= $goal ? 100 : $progress;
+        break;
+
+    default:
+        $progress           = $goal ? round(($income / $goal) * 100, 2) : 0;
+        $progress_bar_value = $income >= $goal ? 100 : $progress;
+        break;
+
+}
+
+$progress = apply_filters('give_goal_amount_funded_percentage_output', $progress, $form_id, $form);
+
+/**
+ * Filter the give currency.
+   *
+   * @since 1.8.17
+   */
+$form_currency = apply_filters('give_goal_form_currency', give_get_currency($form_id), $form_id);
+
+/**
+ * Filter the income formatting arguments.
+   *
+   * @since 1.8.17
+   */
+$income_format_args = apply_filters('give_goal_income_format_args', array(
+   'sanitize' => false,
+   'currency' => $form_currency,
+   'decimal'  => false,
+), $form_id);
+
+/**
+ * Filter the goal formatting arguments.
+   *
+   * @since 1.8.17
+   */
+$goal_format_args = apply_filters('give_goal_amount_format_args', array(
+   'sanitize' => false,
+   'currency' => $form_currency,
+   'decimal'  => false,
+), $form_id);
+
+// Get formatted amount.
+$income = give_human_format_large_amount(give_format_amount($income, $income_format_args), array('currency' => $form_currency));
+$goal   = give_human_format_large_amount(give_format_amount($goal, $goal_format_args), array('currency' => $form_currency));
+
+$overlay_image = get_the_post_thumbnail_url( $form_id, 'large' );
+$preview_image = get_the_post_thumbnail_url( $form_id, 'medium' );
+
+$date = get_the_date(DATE_W3C, $form_id);
+$date2 = strtotime($date);
+$diff = $date2 - time();
+$days = floor(-$diff / (60 * 60 * 24));
+
+?>
 <div class="campaign-page">
    <div class="campaign-page__container">
       <div class="campaign-page__container__col campaign-page__container__col--main">
@@ -7,19 +91,13 @@
                Give My Premature Twins A Chance [Big Heart for Little Ones]
             </div> -->
             <div data-v-1f1d6764="" data-v-1d3087a2="" class="campaign-banner">
-               <div data-v-1f1d6764="" class="campaign-banner__container">
-                  <div data-v-1f1d6764="" class="campaign-banner__container__underlay" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_1200,c_scale/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/q_auto/nmbyrvvm5gdaujezumz9.jpg&quot;);"></div>
-                  <div data-v-1f1d6764="" class="campaign-banner__container__preview" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_1200,c_scale/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/q_auto/nmbyrvvm5gdaujezumz9.jpg&quot;);"></div>
-                  <button data-v-3bb18fd3="" data-v-1f1d6764="" type="button" class="loading-button campaign-banner__thumbnail-container__button campaign-banner__thumbnail-container__button--mobile loading-button--flat">
-                     SEE MORE PHOTOS
-                  </button>
-               </div>
-               <div data-v-1f1d6764="" class="campaign-banner__thumbnail-container">
-                  <span data-v-1f1d6764="" class="campaign-banner__thumbnail-container__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_1000,c_scale/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/q_auto/nmbyrvvm5gdaujezumz9.jpg&quot;);"></span><span data-v-1f1d6764="" class="campaign-banner__thumbnail-container__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_1200,c_scale/f_auto/dpr_auto/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/vk9cucjpaxjpo3bvmbel&quot;);"></span><span data-v-1f1d6764="" class="campaign-banner__thumbnail-container__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_1200,c_scale/f_auto/dpr_auto/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/rqex7le2nce0j2ec0gqr&quot;);"></span> 
-                  <button data-v-3bb18fd3="" data-v-1f1d6764="" type="button" class="loading-button campaign-banner__thumbnail-container__button loading-button--flat">
-                     SEE MORE PHOTOS
-                  </button>
-               </div>
+            <div data-v-1f1d6764="" class="campaign-banner__container">
+               <div data-v-1f1d6764="" class="campaign-banner__container__underlay" style="background-image: url(&quot;<?php echo $overlay_image; ?>&quot;);"></div> 
+               <div data-v-1f1d6764="" class="campaign-banner__container__preview" style="background-image: url(&quot;<?php echo $preview_image; ?>&quot;);"></div> 
+               <button data-v-3bb18fd3="" data-v-1f1d6764="" type="button" class="loading-button campaign-banner__thumbnail-container__button campaign-banner__thumbnail-container__button--mobile loading-button--flat"> 
+                  SEE MORE PHOTOS
+               </button>
+            </div>
             </div>
             <a data-v-11dd9319="" data-v-1d3087a2="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/donate?recurring=true&amp;origin=campaign" class="childmed-blurb">
                <div data-v-11dd9319="" class="childmed-blurb__container">
@@ -122,15 +200,12 @@
                      <div data-v-586aba14="" class="campaign-cta__primary-link-container campaign-cta__primary-link-container--donors-position">
                         <a data-v-586aba14="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/donate?" class="campaign-cta__primary-link">
                            <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__button">
-                            
                               PLEASE DONATE
                            </button>
                         </a>
-                     
                      </div>
                    
                      <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__button campaign-cta__button--orange">
-                      
                         SHARE THIS CAMPAIGN
                         <span data-v-586aba14="" data-v-3bb18fd3="" class="campaign-cta__button__count">
                         </span>
@@ -340,21 +415,21 @@
                    
                      <div data-v-6e670434="" class="campaign-progress__container">
                         <h2 data-v-6e670434="" class="campaign-progress__text">
-                           S$201,085 Raised
+                           <?php echo give_currency_filter($income, array('form_id' => $form_id)); ?> Raised
                         
                         </h2>
                         <div data-v-6e670434="" class="campaign-progress__subtext">
                            (Inc S$34,419 Raised Offline)
                         </div>
                         <p data-v-6e670434="" class="campaign-progress__subtext">
-                           Of S$603,174 Goal
+                           Of <?php echo give_currency_filter($goal, array('form_id' => $form_id)); ?> Goal
                         </p>
                         <div data-v-6e670434="" class="campaign-progress__bar">
-                           <div data-v-6e670434="" class="campaign-progress__bar__progress" style="width: 33.3379%; background-image: linear-gradient(267deg, rgb(235, 0, 140), rgb(239, 169, 109));"></div>
+                           <div data-v-6e670434="" class="campaign-progress__bar__progress" style="width: <?php echo $progress; ?>%; background-image: linear-gradient(267deg, rgb(235, 0, 140), rgb(239, 169, 109));"></div>
                         
                         </div>
                         <p data-v-6e670434="" class="campaign-progress__subtext">
-                           from 1,802 Givers
+                           from <?php echo give_get_form_donor_count($form_id); ?> Givers
                         </p>
                      
                      </div>
@@ -369,22 +444,29 @@
                            GIVE Healthcare
                            </span> 
                            <div data-v-4fe81988="" class="campaign-verification-summary__item__content__sup">
-                              Apr 3, 2023
+                              <?php
+                                 $datee = date_create($date);
+                                 echo date_format($datee,"m d, Y");
+                              ?>
                            </div>
                         </div>
                      </div>
                      <div data-v-609ffe99="" data-v-4fe81988="" class="campaign-trust-and-safety">
-                        <div data-v-609ffe99="" class="campaign-trust-and-safety__icon"><img data-v-609ffe99="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/campaign/trust-safety-icon.svg" alt="trust and safety"></div>
+                        <div data-v-609ffe99="" class="campaign-trust-and-safety__icon">
+                           <img data-v-609ffe99="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/campaign/trust-safety-icon.svg" alt="trust and safety">
+                        </div>
                         <div data-v-609ffe99="" class="campaign-trust-and-safety__content">
                            Learn more about
-                           <a data-v-609ffe99="" href="file:///trust-and-safety?" target="_blank">Trust &amp; Safety</a>
+                           <a data-v-609ffe99="" href="#" target="_blank">Trust &amp; Safety</a>
                         </div>
                      </div>
                      <div data-v-0f80c597="" data-v-4fe81988="" class="campaign-giving-guarantee">
-                        <div data-v-0f80c597="" class="campaign-giving-guarantee__icon"><img data-v-0f80c597="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/campaign/giving-guarantee-icon.svg" alt="giving guarantee"></div>
+                        <div data-v-0f80c597="" class="campaign-giving-guarantee__icon">
+                           <img data-v-0f80c597="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/campaign/giving-guarantee-icon.svg" alt="giving guarantee">
+                        </div>
                         <div data-v-0f80c597="" class="campaign-giving-guarantee__content">
                            Your donation is protected with
-                           <a data-v-0f80c597="" href="file:///giving-guarantee?" target="_blank">
+                           <a data-v-0f80c597="" href="#" target="_blank">
                            Giving Guarantee
                            </a>
                         </div>
