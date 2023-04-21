@@ -81,6 +81,8 @@ $date2 = strtotime($date);
 $diff = $date2 - time();
 $days = floor(-$diff / (60 * 60 * 24));
 
+
+
 ?>
 <div class="campaign-page">
    <div class="campaign-page__container">
@@ -396,12 +398,16 @@ $days = floor(-$diff / (60 * 60 * 24));
          <div data-v-44d4f274="" class="campaign-sidebar">
             <div data-v-44d4f274="" class="campaign-sidebar--mobile-hidden">
                <div data-v-045fc0d9="" data-v-44d4f274="" class="campaign-owner">
-                  <div data-v-045fc0d9="" class="campaign-owner__thumbnail-container"><a data-v-045fc0d9="" href="https://give.asia/user/18waxwofxh1680084968" target="_blank"><span data-v-045fc0d9="" class="campaign-owner__thumbnail-container__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_300,c_scale/q_auto/rgauivkmguymuqzxyy96.jpg&quot;);"></span></a></div>
+                  <div data-v-045fc0d9="" class="campaign-owner__thumbnail-container">
+                     <a data-v-045fc0d9="" href="https://give.asia/user/18waxwofxh1680084968" target="_blank">
+                        <span data-v-045fc0d9="" class="campaign-owner__thumbnail-container__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_300,c_scale/q_auto/rgauivkmguymuqzxyy96.jpg&quot;);"></span>
+                     </a>
+                  </div>
                   <div data-v-045fc0d9="" class="campaign-owner__info">
                      <div data-v-045fc0d9="">
                         By
                         <a data-v-045fc0d9="" href="https://give.asia/user/18waxwofxh1680084968" target="_blank" class="campaign-owner__link" style="color: rgb(235, 0, 140);">
-                        Girish G.H
+                        <?php echo get_the_author(); ?>
                         </a>
                      </div>
                      <p data-v-045fc0d9="" class="campaign-owner__relationship">
@@ -781,7 +787,7 @@ $days = floor(-$diff / (60 * 60 * 24));
                         <div data-v-045fc0d9="">
                            By
                            <a data-v-045fc0d9="" href="https://give.asia/user/18waxwofxh1680084968" target="_blank" class="campaign-owner__link" style="color: rgb(235, 0, 140);">
-                           Girish G.H
+                              <?php echo get_the_author(); ?>
                            </a>
                         </div>
                         <p data-v-045fc0d9="" class="campaign-owner__relationship">
