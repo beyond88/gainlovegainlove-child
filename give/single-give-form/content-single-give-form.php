@@ -90,26 +90,26 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
       <div class="campaign-page__container__col campaign-page__container__col--main">
          <script src="js/personal-campaign-2d10c8bb08b4d70e5d28742cfe3cc8c9-personal-campaign-nav.js"></script>
          <div data-v-1d3087a2="" class="campaign-nav">
-            <!-- <div data-v-1d3087a2="" class="campaign-nav__header campaign-nav__header--padded">
+            <div data-v-1d3087a2="" class="campaign-nav__header campaign-nav__header--padded">
                Give My Premature Twins A Chance [Big Heart for Little Ones]
-            </div> -->
+            </div>
             <div data-v-1f1d6764="" data-v-1d3087a2="" class="campaign-banner">
                <div data-v-1f1d6764="" class="campaign-banner__container">
                   <div data-v-1f1d6764="" class="campaign-banner__container__underlay" style="background-image: url(&quot;<?php echo $overlay_image; ?>&quot;);"></div> 
                   <div data-v-1f1d6764="" class="campaign-banner__container__preview" style="background-image: url(&quot;<?php echo $preview_image; ?>&quot;);"></div> 
                   <button data-v-3bb18fd3="" data-v-1f1d6764="" type="button" class="loading-button campaign-banner__thumbnail-container__button campaign-banner__thumbnail-container__button--mobile loading-button--flat"> 
-                     SEE MORE PHOTOS
+                     <?php echo __('SEE MORE PHOTOS', 'gainlove'); ?>
                   </button>
                </div>
 
-               <div data-v-1f1d6764="" class="campaign-banner__thumbnail-container" bis_skin_checked="1">
+               <!-- <div data-v-1f1d6764="" class="campaign-banner__thumbnail-container" bis_skin_checked="1">
                   <span data-v-1f1d6764="" class="campaign-banner__thumbnail-container__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_1000,c_scale/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/q_auto/mdzsaofstdpaulo69bgw.jpg&quot;);"></span>
                   <span data-v-1f1d6764="" class="campaign-banner__thumbnail-container__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_1200,c_scale/f_auto/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/foj12yo7kedxaqndhonb.jpg&quot;);"></span>
                   <span data-v-1f1d6764="" class="campaign-banner__thumbnail-container__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_1200,c_scale/f_auto/l_assets:giveasia-watermark.png,c_scale,w_0.1,fl_relative,g_north_east,x_24,y_18,e_anti_removal/ewbjlzfuqb61ldkxb2pf.jpg&quot;);"></span> 
                   <button data-v-3bb18fd3="" data-v-1f1d6764="" type="button" class="loading-button campaign-banner__thumbnail-container__button loading-button--flat">
                      SEE MORE PHOTOS
                   </button>
-               </div>
+               </div> -->
 
             </div>
             <a data-v-11dd9319="" data-v-1d3087a2="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/donate?recurring=true&amp;origin=campaign" class="childmed-blurb">
@@ -150,7 +150,7 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                <div data-v-1d3087a2="" class="campaign-nav__sticky-tabs__col campaign-nav__sticky-tabs__col--small">
                   <a data-v-1d3087a2="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/donate" class="campaign-nav__sticky-tabs__link">
                      <button data-v-3bb18fd3="" data-v-1d3087a2="" type="button" class="loading-button campaign-nav__sticky-tabs__col__button">
-                      PLEASE DONATE
+                     <?php echo __('PLEASE DONATE', 'gainlove'); ?>
                      </button>
                   </a>
                </div>
@@ -159,15 +159,21 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                <div data-v-41aa2c30="" class="campaign-tabs__outer">
                   <div data-v-41aa2c30="" class="campaign-tabs__inner">
                      <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/" class="campaign-tabs__tab campaign-tabs__tab--selected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
-                     Story
-                     </a> <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/updates" class="campaign-tabs__tab campaign-tabs__tab--updates campaign-tabs__tab--unselected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
-                     Updates
-                     <span data-v-41aa2c30="" class="campaign-tabs__tab__count campaign-tabs__tab__count--unselected" style="background-color: rgb(235, 0, 140);">6</span></a> <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/activities" class="campaign-tabs__tab campaign-tabs__tab--activities campaign-tabs__tab--unselected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
-                     Activities
-                     <span data-v-41aa2c30="" class="campaign-tabs__tab__count campaign-tabs__tab__count--unselected" style="background-color: rgb(235, 0, 140);">1.8k</span></a> <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/testimonials" class="campaign-tabs__tab campaign-tabs__tab--testimonials campaign-tabs__tab--unselected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
-                     Testimonials
-                     </a> <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/donors" class="campaign-tabs__tab campaign-tabs__tab--top-donors campaign-tabs__tab--unselected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
-                     Top Donors
+                        <?php echo __('Story', 'gainlove'); ?>
+                     </a> 
+                     <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/updates" class="campaign-tabs__tab campaign-tabs__tab--updates campaign-tabs__tab--unselected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
+                        <?php echo __('Updates', 'gainlove'); ?>
+                        <span data-v-41aa2c30="" class="campaign-tabs__tab__count campaign-tabs__tab__count--unselected" style="background-color: rgb(235, 0, 140);">6</span>
+                     </a> 
+                     <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/activities" class="campaign-tabs__tab campaign-tabs__tab--activities campaign-tabs__tab--unselected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
+                        <?php echo __('Activities', 'gainlove'); ?>
+                        <span data-v-41aa2c30="" class="campaign-tabs__tab__count campaign-tabs__tab__count--unselected" style="background-color: rgb(235, 0, 140);">1.8k</span>
+                     </a> 
+                     <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/testimonials" class="campaign-tabs__tab campaign-tabs__tab--testimonials campaign-tabs__tab--unselected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
+                        <?php echo __('Testimonials', 'gainlove'); ?>
+                     </a> 
+                     <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/donors" class="campaign-tabs__tab campaign-tabs__tab--top-donors campaign-tabs__tab--unselected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
+                        <?php echo __('Top Donors', 'gainlove'); ?>
                      </a>
                   </div>
                </div>
@@ -472,7 +478,10 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                      </div>
                   </div>
                   <div data-v-2bb70eac="" class="campaign-info__section">
-                     <div data-v-2bb70eac="">Donations will go to <strong>Twin Babies of Girish Medical Bills</strong> via <strong>GIVE Healthcare</strong></div>
+                     <div data-v-2bb70eac="">Donations will go to 
+                        <strong><?php echo get_post_info($form_id)->post_title; ?></strong> 
+                        via <strong><?php echo get_the_author(); ?></strong>
+                     </div>
                   </div>
                </div>
                <div data-v-586aba14="" data-v-44d4f274="" class="campaign-cta">
