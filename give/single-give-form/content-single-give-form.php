@@ -90,9 +90,9 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
       <div class="campaign-page__container__col campaign-page__container__col--main">
          <script src="js/personal-campaign-2d10c8bb08b4d70e5d28742cfe3cc8c9-personal-campaign-nav.js"></script>
          <div data-v-1d3087a2="" class="campaign-nav">
-            <div data-v-1d3087a2="" class="campaign-nav__header campaign-nav__header--padded">
+            <!-- <div data-v-1d3087a2="" class="campaign-nav__header campaign-nav__header--padded">
                Give My Premature Twins A Chance [Big Heart for Little Ones]
-            </div>
+            </div> -->
             <div data-v-1f1d6764="" data-v-1d3087a2="" class="campaign-banner">
                <div data-v-1f1d6764="" class="campaign-banner__container">
                   <div data-v-1f1d6764="" class="campaign-banner__container__underlay" style="background-image: url(&quot;<?php echo $overlay_image; ?>&quot;);"></div> 
@@ -127,34 +127,6 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                </div>
             </a>
           
-            <div data-v-1d3087a2="" class="campaign-nav__sticky-tabs js-stickyNavTabs" style="display: none;">
-               <div data-v-1d3087a2="" class="campaign-nav__sticky-tabs__col campaign-nav__sticky-tabs__col--large">
-                  <div data-v-41aa2c30="" data-v-1d3087a2="" class="campaign-tabs">
-                     <div data-v-41aa2c30="" class="campaign-tabs__outer">
-                        <div data-v-41aa2c30="" class="campaign-tabs__inner">
-                           <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/" class="campaign-tabs__tab campaign-tabs__tab--selected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
-                           Story
-                           </a> <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/updates" class="campaign-tabs__tab campaign-tabs__tab--updates campaign-tabs__tab--unselected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
-                           Updates
-                           <span data-v-41aa2c30="" class="campaign-tabs__tab__count campaign-tabs__tab__count--unselected" style="background-color: rgb(235, 0, 140);">6</span></a> <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/activities" class="campaign-tabs__tab campaign-tabs__tab--activities campaign-tabs__tab--unselected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
-                           Activities
-                           <span data-v-41aa2c30="" class="campaign-tabs__tab__count campaign-tabs__tab__count--unselected" style="background-color: rgb(235, 0, 140);">1.8k</span></a> <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/testimonials" class="campaign-tabs__tab campaign-tabs__tab--testimonials campaign-tabs__tab--unselected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
-                           Testimonials
-                           </a> <a data-v-41aa2c30="" href="https://give.asia/campaign/give-my-premature-twins-a-chance#/donors" class="campaign-tabs__tab campaign-tabs__tab--top-donors campaign-tabs__tab--unselected" style="color: rgb(235, 0, 140); border-bottom-color: rgb(235, 0, 140);">
-                           Top Donors
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div data-v-1d3087a2="" class="campaign-nav__sticky-tabs__col campaign-nav__sticky-tabs__col--small">
-                  <a data-v-1d3087a2="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/donate" class="campaign-nav__sticky-tabs__link">
-                     <button data-v-3bb18fd3="" data-v-1d3087a2="" type="button" class="loading-button campaign-nav__sticky-tabs__col__button">
-                     <?php echo __('PLEASE DONATE', 'gainlove'); ?>
-                     </button>
-                  </a>
-               </div>
-            </div>
             <div data-v-41aa2c30="" data-v-1d3087a2="" class="campaign-tabs campaign-nav__fixed-tabs js-fixedNavTabs">
                <div data-v-41aa2c30="" class="campaign-tabs__outer">
                   <div data-v-41aa2c30="" class="campaign-tabs__inner">
@@ -201,15 +173,14 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                      <div data-v-586aba14="" class="campaign-cta__primary-link-container campaign-cta__primary-link-container--donors-position">
                         <a data-v-586aba14="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/donate?" class="campaign-cta__primary-link">
                            <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__button">
-                              PLEASE DONATE
+                              <?php echo __('PLEASE DONATE', 'gainlove'); ?>
                            </button>
                         </a>
                      </div>
                    
                      <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__button campaign-cta__button--orange">
-                        SHARE THIS CAMPAIGN
-                        <span data-v-586aba14="" data-v-3bb18fd3="" class="campaign-cta__button__count">
-                        </span>
+                        <?php echo __('SHARE THIS CAMPAIGN', 'gainlove'); ?>
+                        <span data-v-586aba14="" data-v-3bb18fd3="" class="campaign-cta__button__count"></span>
                      </button>
                      <div data-v-63292daa="" data-v-586aba14="">
                         <div data-v-646760a4="" data-v-7ddbc005="" data-v-63292daa="" class="dialog-box js-dialogBoxWrapper" style="position: fixed; display: none;">
@@ -225,7 +196,7 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                               </p>
                               <div data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__button-container">
                                  <button data-v-3bb18fd3="" data-v-7ddbc005="" type="button" class="loading-button shared-successful-dialog__container__button-container__button-close" data-v-646760a4="">
-                                  Close
+                                 Close
                                  </button>
                               </div>
                            </div>
@@ -330,22 +301,12 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                                        <img data-v-b8043b9c="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/thankyou-hand.png" class="donate-flyer__content__flyer-preview__hand donate-flyer__content__flyer-preview__hand--small">
                                     </div>
                                     <button data-v-3bb18fd3="" data-v-b8043b9c="" type="button" class="loading-button donate-flyer__content__flyer-button">
-                                     
                                        DOWNLOAD FLYER PDF
                                     </button>
                                  </div>
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div data-v-586aba14="" class="campaign-cta__mobile-container">
-                        <a data-v-586aba14="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/donate?" class="campaign-cta__mobile-container__primary-link campaign-cta__primary-link--mobile">
-                           <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__mobile-container__primary-link__button">
-                            
-                              PLEASE DONATE
-                           
-                           </button>
-                        </a>
                      </div>
                   </div>
                   <div data-v-00230a7a="" class="campaign-cta-donors__separator"></div>
@@ -444,9 +405,9 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                      <div data-v-4fe81988="" class="campaign-verification-summary__item">
                         <i data-v-4fe81988="" class="campaign-verification-summary__item__icon fas fa-check"></i> 
                         <div data-v-4fe81988="" class="campaign-verification-summary__item__content">
-                           VERIFIED BY
+                           <?php echo __('VERIFIED BY', 'gainlove'); ?>
                            <span data-v-4fe81988="" class="campaign-verification-summary__item__content__name">
-                           GIVE Healthcare
+                              <?php echo bloginfo(); ?>
                            </span> 
                            <div data-v-4fe81988="" class="campaign-verification-summary__item__content__sup">
                               <?php
@@ -496,8 +457,7 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                 
                   <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__button campaign-cta__button--orange">
                      SHARE THIS CAMPAIGN
-                     <span data-v-586aba14="" data-v-3bb18fd3="" class="campaign-cta__button__count">
-                     </span>
+                     <span data-v-586aba14="" data-v-3bb18fd3="" class="campaign-cta__button__count"></span>
                   </button>
                   <div data-v-63292daa="" data-v-586aba14="">
                      <div data-v-646760a4="" data-v-7ddbc005="" data-v-63292daa="" class="dialog-box js-dialogBoxWrapper" style="position: fixed; display: none;">
