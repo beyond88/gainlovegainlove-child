@@ -161,11 +161,8 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                            give_form_display_content($form_id, []);
                         ?>
                      </div>
-                     <div data-v-7c0a99fa="" data-v-e9cf4a2a="" class="medical-condition-card medical-condition-card__bubble medical-condition-card--without-arrow" style="visibility: hidden;">
-                     
-                     </div>
+                     <div data-v-7c0a99fa="" data-v-e9cf4a2a="" class="medical-condition-card medical-condition-card__bubble medical-condition-card--without-arrow" style="visibility: hidden;"></div>
                   </div>
-               
                </div>
                <div data-v-00230a7a="" data-v-e9cf4a2a="" class="campaign-cta-donors campaign-story__cta-donors--mobile-hidden">
                   <div data-v-00230a7a="" class="campaign-cta-donors__header">Give My Premature Twins A Chance [Big Heart for Little Ones]</div>
@@ -365,13 +362,13 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                   </div>
                   <div data-v-045fc0d9="" class="campaign-owner__info">
                      <div data-v-045fc0d9="">
-                        By
+                        <?php echo __('By', 'gainlove'); ?>
                         <a data-v-045fc0d9="" href="https://give.asia/user/18waxwofxh1680084968" target="_blank" class="campaign-owner__link" style="color: rgb(235, 0, 140);">
                         <?php echo get_the_author(); ?>
                         </a>
                      </div>
                      <p data-v-045fc0d9="" class="campaign-owner__relationship">
-                        Family member of the beneficiary
+                        <?php echo __('Family member of the beneficiary', 'gainlove'); ?>
                      </p>
                   </div>
                </div>
@@ -381,21 +378,20 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                    
                      <div data-v-6e670434="" class="campaign-progress__container">
                         <h2 data-v-6e670434="" class="campaign-progress__text">
-                           <?php echo give_currency_filter($income, array('form_id' => $form_id)); ?> Raised
+                           <?php echo give_currency_filter($income, array('form_id' => $form_id)); ?> <?php echo __('Raised', 'gainlove'); ?>
                         
                         </h2>
                         <div data-v-6e670434="" class="campaign-progress__subtext">
                            (Inc S$34,419 Raised Offline)
                         </div>
                         <p data-v-6e670434="" class="campaign-progress__subtext">
-                           Of <?php echo give_currency_filter($goal, array('form_id' => $form_id)); ?> Goal
+                           <?php echo sprintf( __('Of %s Goal', 'gainlove'), give_currency_filter($goal, array('form_id' => $form_id)) ); ?>
                         </p>
                         <div data-v-6e670434="" class="campaign-progress__bar">
                            <div data-v-6e670434="" class="campaign-progress__bar__progress" style="width: <?php echo $progress; ?>%; background-image: linear-gradient(267deg, rgb(235, 0, 140), rgb(239, 169, 109));"></div>
-                        
                         </div>
-                        <p data-v-6e670434="" class="campaign-progress__subtext">
-                           from <?php echo give_get_form_donor_count($form_id); ?> Givers
+                        <p data-v-6e670434="" class="campaign-progress__subtext"> 
+                           <?php echo sprintf( __('from %s Givers', 'gainlove'), give_get_form_donor_count($form_id) ); ?>
                         </p>
                      
                      </div>
@@ -449,20 +445,20 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                   <div data-v-586aba14="" class="campaign-cta__primary-link-container">
                      <a data-v-586aba14="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/donate?" class="campaign-cta__primary-link">
                         <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__button">
-                           PLEASE DONATE
+                           <?php echo __('PLEASE DONATE', 'gainlove'); ?>
                         </button>
                      </a>
-                  
                   </div>
                 
                   <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__button campaign-cta__button--orange">
-                     SHARE THIS CAMPAIGN
+                     <?php echo __('SHARE THIS CAMPAIGN', 'gainlove'); ?>
                      <span data-v-586aba14="" data-v-3bb18fd3="" class="campaign-cta__button__count"></span>
                   </button>
                   <div data-v-63292daa="" data-v-586aba14="">
                      <div data-v-646760a4="" data-v-7ddbc005="" data-v-63292daa="" class="dialog-box js-dialogBoxWrapper" style="position: fixed; display: none;">
                         <div data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container js-dialog-content">
-                           <h3 data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__header"><span data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__header__text">
+                           <h3 data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__header">
+                              <span data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__header__text">
                               Successfully shared!
                               </span> <span data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__header__text">
                               You're awesome :)
@@ -740,26 +736,33 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
                   </div>
                </div>
                <div data-v-4747e3fc="" data-v-1bd85365="" class="campaign-fundraiser">
-                  <div data-v-4747e3fc="" class="campaign-fundraiser__header">Fundraiser</div>
+                  <div data-v-4747e3fc="" class="campaign-fundraiser__header">
+                     <?php echo __('Fundraiser', 'gainlove'); ?>
+                  </div>
                   <div data-v-045fc0d9="" data-v-4747e3fc="" class="campaign-owner campaign-fundraiser__owner">
-                     <div data-v-045fc0d9="" class="campaign-owner__thumbnail-container"><a data-v-045fc0d9="" href="https://give.asia/user/18waxwofxh1680084968" target="_blank"><span data-v-045fc0d9="" class="campaign-owner__thumbnail-container__thumbnail" style="background-image: url(&quot;<?php echo $avatar; ?>&quot;);"></span></a></div>
+                     <div data-v-045fc0d9="" class="campaign-owner__thumbnail-container">
+                        <a data-v-045fc0d9="" href="https://give.asia/user/18waxwofxh1680084968" target="_blank">
+                           <span data-v-045fc0d9="" class="campaign-owner__thumbnail-container__thumbnail" style="background-image: url(&quot;<?php echo $avatar; ?>&quot;);"></span>
+                        </a>
+                     </div>
                      <div data-v-045fc0d9="" class="campaign-owner__info">
                         <div data-v-045fc0d9="">
-                           By
+                           <?php echo __('By', 'gainlove'); ?>
                            <a data-v-045fc0d9="" href="https://give.asia/user/18waxwofxh1680084968" target="_blank" class="campaign-owner__link" style="color: rgb(235, 0, 140);">
                               <?php echo get_the_author(); ?>
                            </a>
                         </div>
                         <p data-v-045fc0d9="" class="campaign-owner__relationship">
-                           Family member of the beneficiary
+                           <?php echo __('Family member of the beneficiary', 'gainlove'); ?>
                         </p>
                      </div>
                   </div>
                   <div data-v-4747e3fc="" class="campaign-fundraiser__separator"></div>
                   <a data-v-4747e3fc="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/contact" target="_blank" class="campaign-fundraiser__link">
                      <button data-v-3bb18fd3="" data-v-4747e3fc="" type="button" class="loading-button campaign-fundraiser__link__button campaign-fundraiser__link__button--rounded loading-button--flat loading-button--gray">
-                      
-                        <div data-v-4747e3fc="" data-v-3bb18fd3="" class="campaign-fundraiser__link__button__text">SEND A MESSAGE</div>
+                        <div data-v-4747e3fc="" data-v-3bb18fd3="" class="campaign-fundraiser__link__button__text">
+                           <?php echo __('SEND A MESSAGE', 'gainlove'); ?>
+                        </div>
                         <i data-v-4747e3fc="" data-v-3bb18fd3="" class="campaign-fundraiser__link__button__icon fas fa-chevron-right"></i>
                      </button>
                   </a>
