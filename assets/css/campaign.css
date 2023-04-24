@@ -11980,3 +11980,10 @@
 .home-footer__giviki-section__giviki-badge__tagline[data-v-149d5bc6] {
   font-size: 14px;
 }
+
+#campaign-updates,
+#campaign-activities,
+#campaign-testimonials,
+#campaign-top-donors {
+  display: none;
+}
