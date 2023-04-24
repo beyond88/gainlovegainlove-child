@@ -1,0 +1,1 @@
+<?php echo get_similiar_campaigns( get_the_ID() ); ?>
