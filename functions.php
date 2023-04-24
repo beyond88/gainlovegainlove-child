@@ -33,7 +33,7 @@ function add_extra_scripts() {
         wp_enqueue_style( 'fontawesome-css', get_stylesheet_directory_uri() . '/../gainlovegainlove-child/assets/css/fontawesome.css', array( $parent_style ), wp_get_theme()->get('Version') );
         wp_enqueue_style( 'common-css', get_stylesheet_directory_uri() . '/../gainlovegainlove-child/assets/css/common.css', array( $parent_style ), wp_get_theme()->get('Version') );
         
-        // wp_enqueue_script('suggested-campaigns', get_stylesheet_directory_uri() . '/../gainlovegainlove-child/assets/js/suggested-campaigns.js', array('jquery'), wp_get_theme()->get('Version'), true);
+        wp_enqueue_script('child-main', get_stylesheet_directory_uri() . '/../gainlovegainlove-child/assets/js/child-main.js', array('jquery'), wp_get_theme()->get('Version'), true);
     }
 
 }

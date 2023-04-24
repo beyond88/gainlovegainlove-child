@@ -1,4 +1,4 @@
-<div data-v-e9cf4a2a="" class="campaign-story campaign-tab">
+<div data-v-e9cf4a2a="" class="campaign-story campaign-tab" id="campaign-story">
     <div data-v-e9cf4a2a="">
         <div data-v-e9cf4a2a="" class="campaign-story__description">
             <?php
