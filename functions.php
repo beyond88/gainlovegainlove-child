@@ -284,8 +284,15 @@ function gainlove_register_api() {
 
 function get_top_donors( WP_REST_Request $request ) {
 
-    global $wpdb; 
-    
-    $response = $request['post_id'];
+    global $wpdb;
+    $donation_meta_table = $wpdb->prefix . 'donationmeta';
+    $form_id = $request['form_id'];
+    $query = $wpdb->get_results($wpdb->prepare("SELECT `meta_key`, `meta_value` 
+                                FROM wp_give_donationmeta WHERE donation_id IN 
+                                (SELECT donation_id FROM wp_give_donationmeta where `meta_key` = '_give_payment_form_id' AND `meta_value` = %d)", $form_id
+                                ), ARRAY_A);
+
+    $response = $query;
+
     return new WP_REST_Response($response, 123);
 }
