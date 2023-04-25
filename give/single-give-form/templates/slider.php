@@ -1,7 +1,7 @@
 <div data-v-1d3087a2="" class="campaign-nav">
-    <!-- <div data-v-1d3087a2="" class="campaign-nav__header campaign-nav__header--padded">
-        Give My Premature Twins A Chance [Big Heart for Little Ones]
-    </div> -->
+    <div data-v-1d3087a2="" class="campaign-nav__header campaign-nav__header--padded">
+        <?php echo get_the_title(); ?>
+    </div>
     <div data-v-1f1d6764="" data-v-1d3087a2="" class="campaign-banner">
         <div data-v-1f1d6764="" class="campaign-banner__container">
             <div data-v-1f1d6764="" class="campaign-banner__container__underlay" style="background-image: url(&quot;<?php echo $overlay_image; ?>&quot;);"></div> 

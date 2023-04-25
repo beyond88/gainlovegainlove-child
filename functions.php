@@ -34,6 +34,17 @@ function add_extra_scripts() {
         wp_enqueue_style( 'common-css', get_stylesheet_directory_uri() . '/../gainlovegainlove-child/assets/css/common.css', array( $parent_style ), wp_get_theme()->get('Version') );
         
         wp_enqueue_script('child-main', get_stylesheet_directory_uri() . '/../gainlovegainlove-child/assets/js/child-main.js', array('jquery'), wp_get_theme()->get('Version'), true);
+
+        wp_localize_script( 'child-main', 'gainlove_ajax', [
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'loading' => __( 'Loading', 'gainlove' ),
+            'pleaseWait' => __('Please wait!', 'gainlove'),
+            'error' => __( 'Something went wrong', 'gainlove' ),
+            'apiNonce' => wp_create_nonce('wp_rest'),
+            'siteURL' => site_url('/'),
+            'giveApiURL' => site_url('/wp-json/give-api/v2/'),
+            'gainloveApiURL' => site_url('/wp-json/gainlove/v1/'),
+        ] );
     }
 
 }
@@ -228,9 +239,53 @@ function get_similiar_campaigns( $post_id ) {
 }
 
 function get_post_info( $post_id ) {
-
     $post = get_post($post_id);
-    
     return $post;
+}
 
+add_action( 'rest_api_init', 'gainlove_customize_rest_cors', 15 );
+add_action( 'rest_api_init', 'gainlove_register_api', 10, 1 );
+
+function gainlove_customize_rest_cors() {
+
+    remove_filter( 'rest_pre_serve_request', 'rest_send_cors_headers' );
+    add_filter( 'rest_pre_serve_request', function( $value ) {
+      header( 'Access-Control-Allow-Origin: *' );
+      header( 'Access-Control-Allow-Methods: POST, GET' );
+      header( 'Access-Control-Allow-Credentials: true' );
+      header( 'Access-Control-Expose-Headers: Link', false );
+      header( 'Access-Control-Allow-Headers: X-Requested-With' );
+      return $value;
+    } );
+
+}
+
+function gainlove_register_api() {
+
+    register_rest_route( 'gainlove/v1', '/top-donors', [
+      'methods'  => WP_REST_SERVER::CREATABLE,
+      'callback' => 'get_top_donors',
+      'permission_callback' => '__return_true'
+    ]);
+
+    // register_rest_route( $this->restBase, '/send-verify-email', [
+    //   'methods'  => WP_REST_SERVER::CREATABLE,
+    //   'callback' => [ $this, 'send_verify_email' ],
+    //   'permission_callback' => '__return_true'
+    // ]);
+
+    // register_rest_route( $this->restBase, '/create-campaign', [
+    //   'methods'  => WP_REST_SERVER::CREATABLE,
+    //   'callback' => [ $this->campaignApi, 'create_campaign' ],
+    //   'permission_callback' => '__return_true'
+    // ]);
+
+}
+
+function get_top_donors( WP_REST_Request $request ) {
+
+    global $wpdb; 
+    
+    $response = $request['post_id'];
+    return new WP_REST_Response($response, 123);
 }

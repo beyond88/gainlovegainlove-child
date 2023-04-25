@@ -1,5 +1,7 @@
 <div data-v-00230a7a="" data-v-e9cf4a2a="" class="campaign-cta-donors campaign-story__cta-donors--mobile-hidden">
-    <div data-v-00230a7a="" class="campaign-cta-donors__header">Give My Premature Twins A Chance [Big Heart for Little Ones]</div>
+    <div data-v-00230a7a="" class="campaign-cta-donors__header">
+        <?php echo get_the_title(); ?>
+    </div>
     <div data-v-586aba14="" data-v-e9cf4a2a="" class="campaign-cta campaign-cta-donors__cta" data-v-00230a7a="">
         <div data-v-586aba14="" class="campaign-cta__primary-link-container campaign-cta__primary-link-container--donors-position">
             <a data-v-586aba14="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/donate?" class="campaign-cta__primary-link">
@@ -121,13 +123,13 @@
                                 <div data-v-b8043b9c="" class="donate-flyer__content__flyer-preview__card__banner donate-flyer__content__flyer-preview__card__banner--small" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/w_640,h_480,c_fill,g_faces/q_auto/nmbyrvvm5gdaujezumz9.jpg&quot;);"></div>
                                 <div data-v-b8043b9c="" class="donate-flyer__content__flyer-preview__card__content donate-flyer__content__flyer-preview__card__content--small">
                                     <h3 data-v-b8043b9c="" class="donate-flyer__content__flyer-preview__card__content__header donate-flyer__content__flyer-preview__card__content__header--small">
-                                    Give My Premature Twins A Chance [Big Heart for Little Ones]
+                                    <?php echo __('', 'gainlove'); ?>
                                     </h3>
                                     <p data-v-b8043b9c="" class="donate-flyer__content__flyer-preview__card__content__text donate-flyer__content__flyer-preview__card__content__text--small">
-                                    Please help us to bring back our extreme premature babies surviving in NICU Myself and my wife would like to seek your help for our new born extreme premature twin babies born on 2...
+                                        <?php echo __('Please help us to bring back our extreme premature babies surviving in NICU Myself and my wife would like to seek your help for our new born extreme premature twin babies born on 2...', 'gainlove'); ?>
                                     </p>
                                     <strong data-v-b8043b9c="" class="donate-flyer__content__flyer-preview__card__content__subheader donate-flyer__content__flyer-preview__card__content__subheader--small">
-                                    Support us at:
+                                        <?php echo __('Support us at:', 'gainlove'); ?>
                                     </strong>
                                 </div>
                             </div>

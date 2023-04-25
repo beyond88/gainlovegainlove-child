@@ -114,4 +114,5 @@ $avatar = get_avatar_url($author_id, ['size' => '40']);
    </div>
    
    <?php include 'templates/similiar-campaigns.php'; ?>
+   <input type="hidden" id="gainlove_form_id" value="<?php echo $form_id; ?>">
 </div>

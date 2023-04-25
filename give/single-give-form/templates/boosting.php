@@ -1,18 +1,19 @@
 <div data-v-1bd85365="" class="campaign-extra-details__section">
     <div data-v-23eb39d5="" data-v-1bd85365="" class="campaign-boost-status">
-        <div data-v-23eb39d5="" class="campaign-boost-status__header"><img data-v-23eb39d5="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/fundraise/boost_icon.png" class="campaign-boost-status__header__icon">
-        This Campaign uses Boosting
+        <div data-v-23eb39d5="" class="campaign-boost-status__header">
+            <img data-v-23eb39d5="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/fundraise/boost_icon.png" class="campaign-boost-status__header__icon">
+            <?php echo __('This Campaign uses Boosting', 'gainlove'); ?>
         </div>
         <div data-v-23eb39d5="" class="campaign-boost-status__text">
-        The fundraiser has opted to allocate up to 10% of funds raised for Facebook marketing to create more awareness, helping the campaign reach more people and hit the campaign goal.
-        <span data-v-23eb39d5="" class="campaign-boost-status__text__link" style="color: rgb(235, 0, 140);">
-        LEARN MORE
-        </span>
+            <?php echo __('The fundraiser has opted to allocate up to 10% of funds raised for Facebook marketing to create more awareness, helping the campaign reach more people and hit the campaign goal.', 'gainlove'); ?>
+            <span data-v-23eb39d5="" class="campaign-boost-status__text__link" style="color: rgb(235, 0, 140);" onclick="showHideContent('','.campaign-page__dialog__lightbox')">
+                <?php echo __('LEARN MORE', 'gainlove'); ?>
+            </span>
         </div>
         <div data-v-23eb39d5="" class="campaign-page__dialog__lightbox js--dismiss-el" style="display: none;">
             <div data-v-23eb39d5="" class="campaign-page__dialog__modal campaign-page__dialog__modal--large">
-                <button data-v-3bb18fd3="" data-v-23eb39d5="" type="button" class="loading-button campaign-page__dialog__modal__dismiss-button js--dismiss-el loading-button--flat loading-button--gray">
-                <i data-v-23eb39d5="" data-v-3bb18fd3="" class="fal fa-times campaign-page__dialog__modal__dismiss-button__icon js--dismiss-el"></i>
+                <button data-v-3bb18fd3="" data-v-23eb39d5="" type="button" class="loading-button campaign-page__dialog__modal__dismiss-button js--dismiss-el loading-button--flat loading-button--gray" onclick="showHideContent('.campaign-page__dialog__lightbox', '')">
+                    <i data-v-23eb39d5="" data-v-3bb18fd3="" class="fal fa-times campaign-page__dialog__modal__dismiss-button__icon js--dismiss-el"></i>
                 </button>
                 <div data-v-23eb39d5="" class="campaign-page__dialog__content">
                     <h1 data-v-23eb39d5="" class="campaign-page__dialog__content__header campaign-page__dialog__content__header--small">Boosted campaigns</h1>
