@@ -15,8 +15,11 @@ $( document ).ready(function() {
             headers: {'X-WP-Nonce': gainlove_ajax.apiNonce },
             url: gainlove_ajax.gainloveApiURL+args.endpoint,
             data: args.data,
-            success: function(data) {
-                console.log('Response',data);
+            success: function(res) {
+                console.log('Response',res);
+                if(res.html && res.target_div){
+                    $(res.target_div).html(res.html);
+                }
             
             },
             error: function (error) {

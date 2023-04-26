@@ -287,12 +287,78 @@ function get_top_donors( WP_REST_Request $request ) {
     global $wpdb;
     $donation_meta_table = $wpdb->prefix . 'donationmeta';
     $form_id = $request['form_id'];
-    $query = $wpdb->get_results($wpdb->prepare("SELECT `meta_key`, `meta_value` 
-                                FROM wp_give_donationmeta WHERE donation_id IN 
-                                (SELECT donation_id FROM wp_give_donationmeta where `meta_key` = '_give_payment_form_id' AND `meta_value` = %d)", $form_id
+    $data = [];
+    $query = $wpdb->get_results($wpdb->prepare("SELECT a.donation_id, b.meta_value AS amount, c.meta_value AS first_name, d.meta_value AS last_name, e.meta_value AS email, f.meta_value AS donation_date, g.meta_value AS currency FROM wp_give_donationmeta a 
+    LEFT JOIN wp_give_donationmeta b ON a.donation_id = b.donation_id
+    LEFT JOIN wp_give_donationmeta c ON a.donation_id = c.donation_id
+    LEFT JOIN wp_give_donationmeta d ON a.donation_id = d.donation_id
+    LEFT JOIN wp_give_donationmeta e ON a.donation_id = e.donation_id
+    LEFT JOIN wp_give_donationmeta f ON a.donation_id = f.donation_id
+    LEFT JOIN wp_give_donationmeta g ON a.donation_id = g.donation_id
+    WHERE b.meta_key = '_give_payment_total' 
+    AND c.meta_key = '_give_donor_billing_first_name'
+    AND d.meta_key = '_give_donor_billing_last_name' 
+    AND e.meta_key = '_give_payment_donor_email'
+    AND f.meta_key = '_give_completed_date'
+    AND g.meta_key = '_give_payment_currency'
+    AND a.meta_key = '_give_payment_form_id' AND a.meta_value = %d", $form_id
                                 ), ARRAY_A);
 
-    $response = $query;
+    $html = '';
+    foreach( $query as $item ) {
+
+            $date = date_create($item['date']);
+            $since = date_format($date,"m d, Y");
+
+            $html .='
+                <div data-v-699f71c4="">
+                    <div data-v-3697e608="" data-v-699f71c4="" class="top-donors-item">
+                        <div data-v-3697e608="" class="top-donors-item__thumbnail-container">
+                            <a data-v-3697e608="" href="#" class="top-donors-item__user-link">
+                                <div data-v-3697e608="" class="top-donors-item__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664443009/assets/images/default_profile_images/default_profile_1.png&quot;);"></div>
+                            </a>
+                        </div>
+                        <div data-v-3697e608="" class="top-donors-item__content">
+                            <div data-v-3697e608="" class="top-donors-item__content__info">
+                                <span data-v-3697e608="" class="top-donors-item__content__info__amount">
+                                '.$item['currency'].' '.number_format($item['amount'], 0).'
+                                </span>
+                                by
+                                <span data-v-3697e608="">
+                                    <a data-v-3697e608="" href="#" target="_blank" class="top-donors-item__content__info__donor">
+                                    '.$item['first_name'].' '.$item['last_name'].'
+                                    </a>
+                                </span> 
+                                <span data-v-3697e608="" class="top-donors-item__content__info__rank">
+                                
+                                </span>
+                            </div>
+                            <div data-v-3697e608="" class="top-donors-item__content__info__registered-at">
+                                Giver since '.$since.'
+                            </div>
+                            <div data-v-3697e608="" class="top-donors-item__content__comment"></div>
+                        </div>
+                    </div>
+            </div>';
+        
+    }
+
+    $response['html'] = $html;
+    $response['target_div'] = ".campaign-top-donors__feed";
 
     return new WP_REST_Response($response, 123);
+}
+
+function serialize_data( $data ) {
+    
+    $formatted = [];
+    if( ! empty( $data ) ) {
+        foreach( $data as $item ) {
+
+        }
+
+    }
+
+
+
 }
