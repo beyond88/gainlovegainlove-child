@@ -31,7 +31,6 @@ $( document ).ready(function() {
       $(".campaign-tabs__tab").removeClass("campaign-tabs__tab--selected");
       $(this).addClass("campaign-tabs__tab--selected");
       const targetTabContent = $(this).data('tab-id');
-      console.log('current tab==>',targetTabContent);
       $(".campaign-tabs__tab").each(function(index, item) {
         let currentTabContent = $(this).data('tab-id');
         if( typeof currentTabContent != "undefined" ){   
