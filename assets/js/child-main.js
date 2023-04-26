@@ -16,11 +16,10 @@ $( document ).ready(function() {
             url: gainlove_ajax.gainloveApiURL+args.endpoint,
             data: args.data,
             success: function(res) {
-                console.log('Response',res);
-                if(res.html && res.target_div){
-                    $(res.target_div).html(res.html);
-                }
-            
+              console.log('Response',res);
+              if(res.html && res.target_div){
+                  $(res.target_div).html(res.html);
+              }
             },
             error: function (error) {
                 console.log('fail==>', error);
@@ -31,9 +30,8 @@ $( document ).ready(function() {
     $(".campaign-tabs__tab").click(function() {
       $(".campaign-tabs__tab").removeClass("campaign-tabs__tab--selected");
       $(this).addClass("campaign-tabs__tab--selected");
-
       const targetTabContent = $(this).data('tab-id');
-
+      console.log('current tab==>',targetTabContent);
       $(".campaign-tabs__tab").each(function(index, item) {
         let currentTabContent = $(this).data('tab-id');
         if( typeof currentTabContent != "undefined" ){   
@@ -61,7 +59,12 @@ $( document ).ready(function() {
         }
       });
 
-      
+      //Show/hide bottom donate based on story tab
+      if( targetTabContent == 'campaign-story'){
+        $('#bottom-donate-part').show();
+      } else {
+        $('#bottom-donate-part').hide();
+      }
     });
   });
   

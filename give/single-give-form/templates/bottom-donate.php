@@ -1,4 +1,4 @@
-<div data-v-00230a7a="" data-v-e9cf4a2a="" class="campaign-cta-donors campaign-story__cta-donors--mobile-hidden">
+<div data-v-00230a7a="" data-v-e9cf4a2a="" class="campaign-cta-donors campaign-story__cta-donors--mobile-hidden" id="bottom-donate-part">
     <div data-v-00230a7a="" class="campaign-cta-donors__header">
         <?php echo get_the_title(); ?>
     </div>
