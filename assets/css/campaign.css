@@ -2168,6 +2168,7 @@
 .campaign-tabs__tab--selected[data-v-41aa2c30] {
   border-bottom-style: solid;
   border-bottom-width: 4px;
+  border-bottom-color:var(--giviki-color);
 }
 @media (min-width: 375px) {
   .campaign-tabs__tab[data-v-41aa2c30] {
@@ -8554,6 +8555,7 @@
 .campaign-tabs__tab--selected[data-v-23eb39d5] {
   border-bottom-style: solid;
   border-bottom-width: 2px;
+  border-bottom-color:rgb(235, 0, 140);
 }
 @media (min-width: 375px) {
   .campaign-tabs__tab[data-v-23eb39d5] {
