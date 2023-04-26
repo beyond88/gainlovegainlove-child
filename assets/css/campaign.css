@@ -2169,6 +2169,7 @@
   border-bottom-style: solid;
   border-bottom-width: 4px;
   border-bottom-color:var(--giviki-color);
+  color: var(--giviki-color);
 }
 @media (min-width: 375px) {
   .campaign-tabs__tab[data-v-41aa2c30] {

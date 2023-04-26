@@ -282,19 +282,19 @@ function gainlove_register_api() {
 
 }
 
-function get_top_donors( WP_REST_Request $request ) {
+
+function top_donors_query( $form_id ) {
 
     global $wpdb;
-    $donation_meta_table = $wpdb->prefix . 'donationmeta';
-    $form_id = $request['form_id'];
-    $data = [];
-    $query = $wpdb->get_results($wpdb->prepare("SELECT a.donation_id, b.meta_value AS amount, c.meta_value AS first_name, d.meta_value AS last_name, e.meta_value AS email, f.meta_value AS donation_date, g.meta_value AS currency FROM wp_give_donationmeta a 
-    LEFT JOIN wp_give_donationmeta b ON a.donation_id = b.donation_id
-    LEFT JOIN wp_give_donationmeta c ON a.donation_id = c.donation_id
-    LEFT JOIN wp_give_donationmeta d ON a.donation_id = d.donation_id
-    LEFT JOIN wp_give_donationmeta e ON a.donation_id = e.donation_id
-    LEFT JOIN wp_give_donationmeta f ON a.donation_id = f.donation_id
-    LEFT JOIN wp_give_donationmeta g ON a.donation_id = g.donation_id
+    $donation_meta_table = $wpdb->prefix . 'give_donationmeta';
+    $query = '';
+    $query = $wpdb->get_results($wpdb->prepare("SELECT a.donation_id, b.meta_value AS amount, c.meta_value AS first_name, d.meta_value AS last_name, e.meta_value AS email, f.meta_value AS donation_date, g.meta_value AS currency FROM ".$donation_meta_table." a 
+    LEFT JOIN ".$donation_meta_table." b ON a.donation_id = b.donation_id
+    LEFT JOIN ".$donation_meta_table." c ON a.donation_id = c.donation_id
+    LEFT JOIN ".$donation_meta_table." d ON a.donation_id = d.donation_id
+    LEFT JOIN ".$donation_meta_table." e ON a.donation_id = e.donation_id
+    LEFT JOIN ".$donation_meta_table." f ON a.donation_id = f.donation_id
+    LEFT JOIN ".$donation_meta_table." g ON a.donation_id = g.donation_id
     WHERE b.meta_key = '_give_payment_total' 
     AND c.meta_key = '_give_donor_billing_first_name'
     AND d.meta_key = '_give_donor_billing_last_name' 
@@ -303,6 +303,16 @@ function get_top_donors( WP_REST_Request $request ) {
     AND g.meta_key = '_give_payment_currency'
     AND a.meta_key = '_give_payment_form_id' AND a.meta_value = %d", $form_id
                                 ), ARRAY_A);
+    return $query; 
+
+}
+
+function get_top_donors( WP_REST_Request $request ) {
+
+    
+    $form_id = $request['form_id'];
+    $data = [];
+    $query = top_donors_query( $form_id );
 
     $html = '';
     foreach( $query as $item ) {
@@ -349,16 +359,33 @@ function get_top_donors( WP_REST_Request $request ) {
     return new WP_REST_Response($response, 123);
 }
 
-function serialize_data( $data ) {
-    
-    $formatted = [];
-    if( ! empty( $data ) ) {
-        foreach( $data as $item ) {
+if( ! function_exists('gainlove_time_ago') ) {
+function gainlove_time_ago($datetime, $full = false) {
+    $now = new DateTime;
+    $ago = new DateTime($datetime);
+    $diff = $now->diff($ago);
 
+    $diff->w = floor($diff->d / 7);
+    $diff->d -= $diff->w * 7;
+
+    $string = array(
+        'y' => 'year',
+        'm' => 'month',
+        'w' => 'week',
+        'd' => 'day',
+        'h' => 'hour',
+        'i' => 'minute',
+        's' => 'second',
+    );
+    foreach ($string as $k => &$v) {
+        if ($diff->$k) {
+            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+        } else {
+            unset($string[$k]);
         }
-
     }
 
-
-
+    if (!$full) $string = array_slice($string, 0, 1);
+    return $string ? implode(', ', $string) . ' ago' : 'just now';
+}
 }

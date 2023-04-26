@@ -146,44 +146,38 @@
     </div>
     <div data-v-00230a7a="" class="campaign-cta-donors__separator"></div>
     <div data-v-00230a7a="" class="campaign-cta-donors__donors">
-        <div data-v-00230a7a="" class="campaign-cta-donors__donors__item">
-            <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__profile-picture" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664443009/assets/images/default_profile_images/default_profile_1.png&quot;);"></div>
-                <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__content">
-                    <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__donor-name"><span data-v-00230a7a="">Anonymous donor</span></div>
-                    <span data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__amount">S$300</span> <span data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__created-at">• 2 hours ago</span>
-                </div>
-            </div>
-            <div data-v-00230a7a="" class="campaign-cta-donors__donors__item">
-                <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__profile-picture" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664443009/assets/images/default_profile_images/default_profile_2.png&quot;);"></div>
-                <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__content">
-                    <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__donor-name"><span data-v-00230a7a="">Anonymous donor</span></div>
-                    <span data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__amount">S$20</span> <span data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__created-at">• 2 hours ago</span>
-                </div>
-            </div>
+        <?php 
+            $donations = top_donors_query( $form_id );
+            if( ! empty( $donations ) ) {
+               $i = 0;
+               foreach( $donations as $item ) {
+        ?>
             <div data-v-00230a7a="" class="campaign-cta-donors__donors__item">
                 <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__profile-picture" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664443009/assets/images/default_profile_images/default_profile_1.png&quot;);"></div>
                 <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__content">
-                    <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__donor-name"><span data-v-00230a7a="">Anonymous donor</span></div>
-                    <span data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__amount">S$50</span> <span data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__created-at">• 3 hours ago</span>
+                    <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__donor-name">
+                        <span data-v-00230a7a="">
+                            <?php echo $item['first_name'].' '.$item['last_name']; ?>
+                        </span>
+                    </div>
+                    <span data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__amount">
+                        <?php echo $form_currency.number_format($item['amount'], 0); ?>
+                    </span> 
+                    <span data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__created-at">
+                        • <?php echo gainlove_time_ago( $item['donation_date'] ); ?>
+                    </span>
                 </div>
             </div>
-            <div data-v-00230a7a="" class="campaign-cta-donors__donors__item">
-                <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__profile-picture" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664443009/assets/images/default_profile_images/default_profile_1.png&quot;);"></div>
-                <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__content">
-                    <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__donor-name"><span data-v-00230a7a="">Anonymous donor</span></div>
-                    <span data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__amount">S$10</span> <span data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__created-at">• 3 hours ago</span>
-                </div>
-            </div>
-            <div data-v-00230a7a="" class="campaign-cta-donors__donors__item">
-                <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__profile-picture" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664443009/assets/images/default_profile_images/default_profile_5.png&quot;);"></div>
-                <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__content">
-                    <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__donor-name"><span data-v-00230a7a="">Alan</span></div>
-                    <span data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__amount">S$300</span> <span data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__created-at">• 5 hours ago</span>
-                </div>
-            </div>
-        </div>
-        <div data-v-00230a7a="" class="campaign-cta-donors__total">
-            <strong>+ 1797 givers</strong> have donated to this campaign
-        </div>
+            <?php 
+         if( $i == 4 ){
+            break;
+         }
+         $i++;
+         } ?>
+      <?php } ?>
+    </div>
+    <?php if( ! empty( $donations ) ) { ?>
+    <div data-v-00230a7a="" class="campaign-cta-donors__total"><strong>+ <?php echo count(top_donors_query( $form_id ))-5;?> <?php echo __('givers', 'gainlove'); ?></strong> <?php echo __('have donated to this campaign', 'gainlove'); ?></div>
+    <?php } ?>
     </div>
 </div>
