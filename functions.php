@@ -49,6 +49,34 @@ function add_extra_scripts() {
 
 }
 
+function add_opengraph_doctype( $output ) {
+    return $output . ' xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"';
+}
+add_filter('language_attributes', 'add_opengraph_doctype');
+
+function insert_fb_in_head() {
+
+    global $post;
+    if ( ! is_singular() )
+        return;
+        echo '<meta property="fb:app_id" content="Your Facebook App ID" />';
+        echo '<meta property="og:title" content="' . get_the_title() . '"/>';
+        echo '<meta property="og:type" content="article"/>';
+        echo '<meta property="og:url" content="' . get_permalink(get_the_ID()) . '"/>';
+        echo '<meta property="og:site_name" content=" '.get_bloginfo().' "/>';
+    
+    if( ! has_post_thumbnail( $post->ID ) ) {
+        $default_image="https://via.placeholder.com/400"; 
+        echo '<meta property="og:image" content="' . esc_url($default_image) . '"/>';
+    }else{
+        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+        echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
+    }
+    echo "";
+
+}
+add_action( 'wp_head', 'insert_fb_in_head', 5 );
+
 function get_similiar_campaigns( $post_id ) {
 
     $html = "";

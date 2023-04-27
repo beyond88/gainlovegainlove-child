@@ -179,10 +179,10 @@
                             <div data-v-46235af8="" data-v-0ca5f774="" class="input-text campaign-share-dialog__content__copy-link__url-input" readonly="readonly" type="text">
                                 <p data-v-46235af8="" class="input-text__label" style="display: none;">
                                 </p>
-                                <input data-v-46235af8="" type="text" placeholder="" step="1" readonly="readonly" class="input-text__input" value="<?php echo get_permalink($form_id); ?>"> 
+                                <input data-v-46235af8="" type="text" placeholder="" step="1" readonly="readonly" class="input-text__input" value="<?php echo get_permalink($form_id); ?>" id="campaign-info-link-text"> 
                                 <p data-v-46235af8="" class="input-text__error" style="display: none;"></p>
                             </div>
-                            <button data-v-3bb18fd3="" data-v-0ca5f774="" type="button" class="loading-button campaign-share-dialog__content__copy-link__button">
+                            <button data-v-3bb18fd3="" data-v-0ca5f774="" type="button" class="loading-button campaign-share-dialog__content__copy-link__button" onClick="copyToClipboard('#campaign-info-link-text')">
                                 <span data-v-0ca5f774="" data-v-3bb18fd3="" class="campaign-share-dialog__content__copy-link__button__label--hidden-lg">
                                     <?php echo __('COPY', 'gainlove'); ?>
                                 </span> 

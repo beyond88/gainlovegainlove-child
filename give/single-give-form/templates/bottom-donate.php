@@ -51,9 +51,13 @@
                         <div data-v-0ca5f774="" class="campaign-share-dialog__content__buttons-container">
                         <div data-v-fd8b712e="" data-v-0ca5f774="" class="social-media-share">
                             <p data-v-fd8b712e="" class="social-media-share__share-text"><?php echo __('SHARE', 'gainlove'); ?></p>
+                            <?php 
+                                $share_url = "I am supporting this fundraising page ";
+                                $share_url .= get_permalink($form_id);
+                            ?>
                             <div data-v-fd8b712e="" class="social-media-share__share-buttons">
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                    <a data-v-fd8b712e="" href="https://give.asia/campaign/carry-hope-2023-team-wenjie/share/whatsapp?" target="_blank">
+                                    <a data-v-fd8b712e="" href="https://api.whatsapp.com/send?text=<?php echo $share_url; ?>" data-action="share/whatsapp/share" target="_blank">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button whatsapp-button loading-button--flat loading-button--rounded-full loading-button--transparent">
                                             <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-whatsapp_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
@@ -61,7 +65,7 @@
                                     </a>
                                 </div>
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                    <a data-v-fd8b712e="" href="https://give.asia/campaign/carry-hope-2023-team-wenjie/share/facebook?" target="_blank">
+                                    <a data-v-fd8b712e="" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink($form_id)) ?>" target="_blank">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button facebook-button loading-button--flat loading-button--rounded-full loading-button--transparent">
                                             <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-fb_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
@@ -99,11 +103,12 @@
                         <div data-v-46235af8="" data-v-0ca5f774="" class="input-text campaign-share-dialog__content__copy-link__url-input" readonly="readonly" type="text">
                             <p data-v-46235af8="" class="input-text__label" style="display: none;">
                             </p>
-                            <input data-v-46235af8="" type="text" placeholder="" step="1" readonly="readonly" class="input-text__input" value="<?php echo get_permalink($form_id); ?>"> 
+                            <input data-v-46235af8="" type="text" placeholder="" step="1" readonly="readonly" class="input-text__input" id="campaign-link-text" value="<?php echo get_permalink($form_id); ?>"> 
                             <p data-v-46235af8="" class="input-text__error" style="display: none;"></p>
                         </div>
-                        <button data-v-3bb18fd3="" data-v-0ca5f774="" type="button" class="loading-button campaign-share-dialog__content__copy-link__button">
-                            <span data-v-0ca5f774="" data-v-3bb18fd3="" class="campaign-share-dialog__content__copy-link__button__label--hidden-lg">COPY</span> <span data-v-0ca5f774="" data-v-3bb18fd3="" class="campaign-share-dialog__content__copy-link__button__label--hidden-sm">COPY LINK</span>
+                        <button data-v-3bb18fd3="" data-v-0ca5f774="" type="button" class="loading-button campaign-share-dialog__content__copy-link__button" onClick="copyToClipboard('#campaign-link-text')">
+                            <span data-v-0ca5f774="" data-v-3bb18fd3="" class="campaign-share-dialog__content__copy-link__button__label--hidden-lg">COPY</span> 
+                            <span data-v-0ca5f774="" data-v-3bb18fd3="" class="campaign-share-dialog__content__copy-link__button__label--hidden-sm">COPY LINK</span>
                         </button>
                         </div>
                     </div>

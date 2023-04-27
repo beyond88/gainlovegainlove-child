@@ -66,6 +66,15 @@ $( document ).ready(function() {
       }
     });
   });
+
+  /************************
+   * 
+   * Copy campaign link
+   * 
+   ************************/
+  $('.campaign-share-dialog__content__copy-link__button__label--hidden-sm').on('click', function(){
+
+  });
   
 })(jQuery, window, document);
 
@@ -75,6 +84,21 @@ $( document ).ready(function() {
  * 
  ************************/
 function showHideContent(that, targetId) {
-    jQuery(that).hide();
-    jQuery(targetId).show();
+  jQuery(that).hide();
+  jQuery(targetId).show();
 };
+
+/************************
+ * 
+ * Copy text function
+ * 
+ ************************/
+function copyToClipboard(element) {
+
+  console.log('clicked');
+  // var $temp = $("<input>");
+  // $("body").append($temp);
+  // $temp.val($(element).value()).select();
+  // document.execCommand("copy");
+  // $temp.remove();
+}
