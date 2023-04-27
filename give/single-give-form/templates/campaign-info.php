@@ -131,45 +131,49 @@
                         <div data-v-0ca5f774="" class="campaign-share-dialog__content__buttons-container">
                             <div data-v-fd8b712e="" data-v-0ca5f774="" class="social-media-share">
                                 <p data-v-fd8b712e="" class="social-media-share__share-text"><?php echo __('SHARE', 'gainlove'); ?></p>
+                                <?php 
+                                    $share_url = "I am supporting this fundraising page ";
+                                    $share_url .= get_permalink($form_id);
+                                ?>
                                 <div data-v-fd8b712e="" class="social-media-share__share-buttons">
                                     <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                        <a data-v-fd8b712e="" href="https://give.asia/campaign/carry-hope-2023-team-wenjie/share/whatsapp?" target="_blank">
-                                        <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button whatsapp-button loading-button--flat loading-button--rounded-full loading-button--transparent">
-                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-whatsapp_2x.png" alt="" class="social-media-share__button-container__button__icon">
-                                        </button>
-                                        <?php echo __('Whatsapp', 'gainlove'); ?>
+                                        <a data-v-fd8b712e="" href="https://api.whatsapp.com/send?text=<?php echo $share_url; ?>" data-action="share/whatsapp/share" target="_blank">
+                                            <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button whatsapp-button loading-button--flat loading-button--rounded-full loading-button--transparent">
+                                                <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-whatsapp_2x.png" alt="" class="social-media-share__button-container__button__icon">
+                                            </button>
+                                            <?php echo __('Whatsapp', 'gainlove'); ?>
                                         </a>
                                     </div>
                                     <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                        <a data-v-fd8b712e="" href="https://give.asia/campaign/carry-hope-2023-team-wenjie/share/facebook?" target="_blank">
-                                        <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button facebook-button loading-button--flat loading-button--rounded-full loading-button--transparent">
-                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-fb_2x.png" alt="" class="social-media-share__button-container__button__icon">
-                                        </button>
-                                        <?php echo __('Facebook', 'gainlove'); ?>
+                                        <a data-v-fd8b712e="" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink($form_id)) ?>" target="_blank">
+                                            <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button facebook-button loading-button--flat loading-button--rounded-full loading-button--transparent">
+                                                <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-fb_2x.png" alt="" class="social-media-share__button-container__button__icon">
+                                            </button>
+                                            <?php echo __('Facebook', 'gainlove'); ?>
                                         </a>
                                     </div>
                                     <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                        <a data-v-fd8b712e="" href="https://give.asia/campaign/carry-hope-2023-team-wenjie/share/telegram?" target="_blank">
-                                        <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button telegram-button loading-button--flat loading-button--rounded-full loading-button--transparent">
-                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-telegram_2x.png" alt="" class="social-media-share__button-container__button__icon">
-                                        </button>
-                                        <?php echo __('Telegram', 'gainlove'); ?>
+                                        <a data-v-fd8b712e="" href="https://t.me/share/url?url=<?php echo $share_url; ?>" target="_blank">
+                                            <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button telegram-button loading-button--flat loading-button--rounded-full loading-button--transparent">
+                                                <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-telegram_2x.png" alt="" class="social-media-share__button-container__button__icon">
+                                            </button>
+                                            <?php echo __('Telegram', 'gainlove'); ?>
                                         </a>
                                     </div>
                                     <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                        <a data-v-fd8b712e="" href="https://give.asia/campaign/carry-hope-2023-team-wenjie/share/twitter?" target="_blank">
-                                        <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button twitter-button loading-button--flat loading-button--rounded-full loading-button--transparent">
-                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-twitter_2x.png" alt="" class="social-media-share__button-container__button__icon">
-                                        </button>
-                                        <?php echo __('Twitter', 'gainlove'); ?>
+                                        <a data-v-fd8b712e="" href="https://twitter.com/intent/tweet?text=<?php echo $share_url; ?>" target="_blank">
+                                            <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button twitter-button loading-button--flat loading-button--rounded-full loading-button--transparent">
+                                                <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-twitter_2x.png" alt="" class="social-media-share__button-container__button__icon">
+                                            </button>
+                                            <?php echo __('Twitter', 'gainlove'); ?>
                                         </a>
                                     </div>
                                     <div data-v-fd8b712e="" class="social-media-share__button-container">
                                         <a data-v-fd8b712e="" href="https://give.asia/campaign/carry-hope-2023-team-wenjie/share/email?" target="_blank">
-                                        <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button email-button loading-button--flat loading-button--rounded-full loading-button--transparent">
-                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-email_2x.png" alt="" class="social-media-share__button-container__button__icon">
-                                        </button>
-                                        <?php echo __('Email', 'gainlove'); ?>
+                                            <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button email-button loading-button--flat loading-button--rounded-full loading-button--transparent">
+                                                <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-email_2x.png" alt="" class="social-media-share__button-container__button__icon">
+                                            </button>
+                                            <?php echo __('Email', 'gainlove'); ?>
                                         </a>
                                     </div>
                                 </div>

@@ -73,7 +73,7 @@
                                     </a>
                                 </div>
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                    <a data-v-fd8b712e="" href="https://give.asia/campaign/carry-hope-2023-team-wenjie/share/telegram?" target="_blank">
+                                    <a data-v-fd8b712e="" href="https://t.me/share/url?url=<?php echo $share_url; ?>" target="_blank">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button telegram-button loading-button--flat loading-button--rounded-full loading-button--transparent">
                                             <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-telegram_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
@@ -81,7 +81,7 @@
                                     </a>
                                 </div>
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                    <a data-v-fd8b712e="" href="https://give.asia/campaign/carry-hope-2023-team-wenjie/share/twitter?" target="_blank">
+                                    <a data-v-fd8b712e="" href="https://twitter.com/intent/tweet?text=<?php echo $share_url; ?>" target="_blank">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button twitter-button loading-button--flat loading-button--rounded-full loading-button--transparent">
                                             <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-twitter_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
