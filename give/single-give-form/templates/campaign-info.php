@@ -169,7 +169,7 @@
                                         </a>
                                     </div>
                                     <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                        <a data-v-fd8b712e="" href="https://give.asia/campaign/carry-hope-2023-team-wenjie/share/email?" target="_blank">
+                                        <a data-v-fd8b712e="" href="mailto:type%20email%20address%20here?subject=I am supporting this fundraising page - <?php echo get_the_title(); ?>&body=<?php echo get_the_excerpt(); ?>%20%20%2D%20%20%28%20<?php the_permalink(); ?>%20%29" target="_blank">
                                             <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button email-button loading-button--flat loading-button--rounded-full loading-button--transparent">
                                                 <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-email_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                             </button>
