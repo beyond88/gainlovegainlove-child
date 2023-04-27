@@ -11,7 +11,7 @@
             </a>
         </div>
     
-        <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__button campaign-cta__button--orange gainlove-share-button" onClick="showHideContent('', '.campaign-share-dialog__lightbox')">
+        <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__button campaign-cta__button--orange gainlove-share-button" onClick="showHideContent('', '.bottom-donate-share-part')">
             <?php echo __('SHARE THIS CAMPAIGN', 'gainlove'); ?>
             <span data-v-586aba14="" data-v-3bb18fd3="" class="campaign-cta__button__count"></span>
         </button>
@@ -34,9 +34,9 @@
                     </div>
                 </div>
             </div>
-            <div data-v-0ca5f774="" class="campaign-share-dialog__lightbox js--dismiss-el" style="display: none;">
+            <div data-v-0ca5f774="" class="campaign-share-dialog__lightbox js--dismiss-el bottom-donate-share-part" style="display: none;">
                 <div data-v-0ca5f774="" class="campaign-share-dialog__modal">
-                    <button data-v-3bb18fd3="" data-v-0ca5f774="" type="button" class="loading-button campaign-share-dialog__modal__dismiss-button js--dismiss-el loading-button--flat loading-button--gray" onClick="showHideContent('.campaign-share-dialog__lightbox', '',)">
+                    <button data-v-3bb18fd3="" data-v-0ca5f774="" type="button" class="loading-button campaign-share-dialog__modal__dismiss-button js--dismiss-el loading-button--flat loading-button--gray" onClick="showHideContent('.bottom-donate-share-part', '')">
                         <i data-v-0ca5f774="" data-v-3bb18fd3="" class="fal fa-times campaign-share-dialog__modal__dismiss-button__icon js--dismiss-el"></i>
                     </button>
                     <div data-v-0ca5f774="" class="campaign-share-dialog__content">
@@ -99,7 +99,7 @@
                         <div data-v-46235af8="" data-v-0ca5f774="" class="input-text campaign-share-dialog__content__copy-link__url-input" readonly="readonly" type="text">
                             <p data-v-46235af8="" class="input-text__label" style="display: none;">
                             </p>
-                            <input data-v-46235af8="" type="text" placeholder="" step="1" readonly="readonly" class="input-text__input"> 
+                            <input data-v-46235af8="" type="text" placeholder="" step="1" readonly="readonly" class="input-text__input" value="<?php echo get_permalink($form_id); ?>"> 
                             <p data-v-46235af8="" class="input-text__error" style="display: none;"></p>
                         </div>
                         <button data-v-3bb18fd3="" data-v-0ca5f774="" type="button" class="loading-button campaign-share-dialog__content__copy-link__button">
