@@ -151,8 +151,20 @@
          } ?>
       <?php } ?>
     </div>
-    <?php if( ! empty( $donations ) ) { ?>
-    <div data-v-00230a7a="" class="campaign-cta-donors__total"><strong>+ <?php echo count(top_donors_query( $form_id ))-5;?> <?php echo __('givers', 'gainlove'); ?></strong> <?php echo __('have donated to this campaign', 'gainlove'); ?></div>
+    <?php if( ! empty( $donations ) ) {
+        $total_donation = count(top_donors_query( $form_id, 5000000, 1 ));
+        $target_donation = 5;
+        $more_donation = 0;
+        
+        if( $total_donation > $target_donation ){
+            $more_donation = $total_donation - $target_donation;
+        }    
+    ?>
+    <div data-v-00230a7a="" class="campaign-cta-donors__total">
+        <strong>+ <?php echo $more_donation;?> 
+        <?php echo __('givers', 'gainlove'); ?></strong> 
+        <?php echo __('have donated to this campaign', 'gainlove'); ?>
+    </div>
     <?php } ?>
     </div>
 </div>

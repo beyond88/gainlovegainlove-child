@@ -317,7 +317,7 @@ function top_donors_query( $form_id, $per_page = NULL, $page_no = 1 ) {
     $donation_meta_table = $wpdb->prefix . 'give_donationmeta';
 
     if( ! isset( $per_page ) ){
-        $per_page = 2; 
+        $per_page = 5; 
     }
 
     if( ! isset( $page_no ) ) {
