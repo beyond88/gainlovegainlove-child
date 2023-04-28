@@ -42,23 +42,26 @@ $( document ).ready(function() {
             $('#'+currentTabContent).show();
             $(this).addClass("campaign-tabs__tab--selected");
             $(this).removeClass("campaign-tabs__tab--unselected");
+            $(this).children('span').removeClass('campaign-tabs__tab__count--unselected');
 
-            if( currentTabContent == 'campaign-top-donors'){
-                let data = {
-                  method: "POST",
-                  endpoint: 'top-donors',
-                  data: {
-                    form_id: $('#gainlove_form_id').val()
-                  },
-                  print: 'html', 
-                  target_div: '.campaign-top-donors__feed'
-                }
-                $.fn.ajaxCall(data);
+            if( currentTabContent == 'campaign-top-donors' ) {
+              let data = {
+                method: "POST",
+                endpoint: 'top-donors',
+                data: {
+                  form_id: $('#gainlove_form_id').val()
+                },
+                print: 'html', 
+                target_div: '.campaign-top-donors__feed'
+              }
+              $.fn.ajaxCall(data);
             }
+
           } else {
             if( typeof targetTabContent !== "undefined"){
               $('#'+currentTabContent).hide();
               $(this).addClass("campaign-tabs__tab--unselected");
+              $(this).children('span').addClass('campaign-tabs__tab__count--unselected');
             }
           }
         }

@@ -138,6 +138,14 @@ function get_activities( WP_REST_Request $request ) {
             </div>
             ';
         }
+    } else {
+        $html .='
+            <style type="text/css">
+            .campaign-activities__feed__button-container{
+                display:none;
+            }
+            </style>
+        ';
     }
 
     $response['html'] = $html;
