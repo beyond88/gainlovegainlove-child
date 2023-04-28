@@ -18,7 +18,11 @@ $( document ).ready(function() {
             success: function(res) {
               console.log('Response',res);
               if(res.html && res.target_div){
+                if(args.type == 'html'){
                   $(res.target_div).html(res.html);
+                } else {
+                  $(res.target_div).append(res.html);
+                }
               }
             },
             error: function (error) {
@@ -41,11 +45,12 @@ $( document ).ready(function() {
 
             if( currentTabContent == 'campaign-top-donors'){
                 let data = {
-                    method: "POST",
-                    endpoint: 'top-donors',
-                    data: {
-                        form_id: $('#gainlove_form_id').val()
-                    }
+                  method: "POST",
+                  endpoint: 'top-donors',
+                  data: {
+                    form_id: $('#gainlove_form_id').val()
+                  },
+                  type: 'html'
                 }
                 $.fn.ajaxCall(data);
             }
@@ -74,6 +79,23 @@ $( document ).ready(function() {
    ************************/
   $('.campaign-share-dialog__content__copy-link__button__label--hidden-sm').on('click', function(){
 
+  });
+
+  /************************
+  * 
+  * Get activities
+  * 
+  ************************/
+  $('#see-more-activties').on('click', function(){
+    let data = {
+      method: "POST",
+      endpoint: 'activities',
+      data: {
+        form_id: $('#gainlove_form_id').val()
+      },
+      type: 'html'
+    }
+    $.fn.ajaxCall(data);
   });
   
 })(jQuery, window, document);
