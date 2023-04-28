@@ -2,7 +2,7 @@
     <div data-v-8c160544="" class="campaign-activities__feed">
         <?php 
         
-        $donors = top_donors_query( $form_id, 5, 1 );
+        $donors = donation_query( $form_id, 5, 1 );
         if( ! empty( $donors ) ) {
             foreach( $donors as $item ) {
         ?>

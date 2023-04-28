@@ -122,7 +122,7 @@
     <div data-v-00230a7a="" class="campaign-cta-donors__separator"></div>
     <div data-v-00230a7a="" class="campaign-cta-donors__donors">
         <?php 
-            $donations = top_donors_query( $form_id );
+            $donations = donation_query( $form_id );
             if( ! empty( $donations ) ) {
                $i = 0;
                foreach( $donations as $item ) {
@@ -152,7 +152,7 @@
       <?php } ?>
     </div>
     <?php if( ! empty( $donations ) ) {
-        $total_donation = count(top_donors_query( $form_id, 5000000, 1 ));
+        $total_donation = count(donation_query( $form_id, 5000000, 1 ));
         $target_donation = 5;
         $more_donation = 0;
         

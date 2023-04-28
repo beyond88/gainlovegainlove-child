@@ -1,6 +1,6 @@
 <?php 
 
-function top_donors_query( $form_id, $per_page = NULL, $page_no = 1 ) {
+function donation_query( $form_id, $per_page = NULL, $page_no = 1 ) {
 
     global $wpdb;
     $donation_meta_table = $wpdb->prefix . 'give_donationmeta';

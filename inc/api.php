@@ -25,11 +25,11 @@ function gainlove_register_api() {
       'permission_callback' => '__return_true'
     ]);
 
-    // register_rest_route( $this->restBase, '/send-verify-email', [
-    //   'methods'  => WP_REST_SERVER::CREATABLE,
-    //   'callback' => [ $this, 'send_verify_email' ],
-    //   'permission_callback' => '__return_true'
-    // ]);
+    register_rest_route( $this->restBase, '/activities', [
+      'methods'  => WP_REST_SERVER::CREATABLE,
+      'callback' => [ $this, 'get_activities' ],
+      'permission_callback' => '__return_true'
+    ]);
 
     // register_rest_route( $this->restBase, '/create-campaign', [
     //   'methods'  => WP_REST_SERVER::CREATABLE,
@@ -40,11 +40,9 @@ function gainlove_register_api() {
 }
 
 function get_top_donors( WP_REST_Request $request ) {
-
     
     $form_id = $request['form_id'];
-    $data = [];
-    $query = top_donors_query( $form_id, 5, 1);
+    $query = donation_query( $form_id, 5, 1);
 
     $html = '';
     if( ! empty( $query ) ){
@@ -104,7 +102,14 @@ function get_top_donors( WP_REST_Request $request ) {
     }
 
     $response['html'] = $html;
-    $response['target_div'] = ".campaign-top-donors__feed";
+    return new WP_REST_Response($response, 123);
+}
 
+function get_activities( WP_REST_Request $request ) {
+
+    $form_id = $request['form_id'];
+    $query = donation_query( $form_id, 5, 1);
+
+    $response['html'] = $html;
     return new WP_REST_Response($response, 123);
 }

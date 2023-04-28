@@ -2,7 +2,7 @@
    
    <div data-v-00230a7a="" class="campaign-cta-donors__donors">
       <?php 
-         $donors = top_donors_query( $form_id );
+         $donors = donation_query( $form_id );
          if( ! empty( $donors ) ) {
             $i = 0;
             foreach( $donors as $item ) {
@@ -32,7 +32,7 @@
       <?php } ?>
    </div>
    <?php if( ! empty( $donations ) ) {
-      $total_donation = count(top_donors_query( $form_id, 5000000, 1 ));
+      $total_donation = count(donation_query( $form_id, 5000000, 1 ));
       $target_donation = 5;
       $more_donation = 0;
       

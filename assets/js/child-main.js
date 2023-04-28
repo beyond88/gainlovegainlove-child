@@ -19,9 +19,9 @@ $( document ).ready(function() {
               console.log('Response',res);
               if(res.html && res.target_div){
                 if(args.type == 'html'){
-                  $(res.target_div).html(res.html);
+                  $(args.target_div).html(res.html);
                 } else {
-                  $(res.target_div).append(res.html);
+                  $(args.target_div).append(res.html);
                 }
               }
             },
@@ -50,7 +50,8 @@ $( document ).ready(function() {
                   data: {
                     form_id: $('#gainlove_form_id').val()
                   },
-                  type: 'html'
+                  type: 'html', 
+                  target_div: '.campaign-top-donors__feed'
                 }
                 $.fn.ajaxCall(data);
             }
@@ -93,7 +94,8 @@ $( document ).ready(function() {
       data: {
         form_id: $('#gainlove_form_id').val()
       },
-      type: 'html'
+      type: 'html',
+      target_div: ''
     }
     $.fn.ajaxCall(data);
   });
