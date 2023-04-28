@@ -1,5 +1,5 @@
 <div data-v-e9cf4a2a="" class="campaign-activities campaign-tab" id="campaign-activities">
-    <div data-v-8c160544="" class="campaign-activities__feed">
+    <div data-v-8c160544="" class="campaign-activities__feed" id="campaign-activities__feed">
         <?php 
         
         $donors = donation_query( $form_id, 5, 1 );
@@ -32,8 +32,10 @@
             <?php echo __('There\'s no activities on this campaign yet. Join as a donor and request for an activities!', 'gainlove'); ?>
         </div>
         <?php } ?>
+    </div>
+    <div data-v-8c160544="" class="campaign-activities__feed">
         <div data-v-8c160544="" class="campaign-activities__feed__button-container">
-            <button data-v-3bb18fd3="" data-v-8c160544="" type="button" class="loading-button campaign-activities__feed__button-container__button loading-button--flat" id="see-more-activties">
+            <button data-v-3bb18fd3="" data-v-8c160544="" type="button" class="loading-button campaign-activities__feed__button-container__button loading-button--flat" id="see-more-activties" data-page-no="2" data-per-page="5">
                 <?php echo __('SEE MORE ACTIVITIES', 'gainlove'); ?>
             </button>
         </div>

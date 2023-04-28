@@ -5,19 +5,18 @@ function donation_query( $form_id, $per_page = NULL, $page_no = 1 ) {
     global $wpdb;
     $donation_meta_table = $wpdb->prefix . 'give_donationmeta';
 
-    if( ! isset( $per_page ) ){
+    if( ! isset( $per_page ) ) {
         $per_page = 5; 
     }
 
     if( ! isset( $page_no ) ) {
-        $page = "1";
-    }else {
-        $page = $page_no;
+        $page = 1;
+    } else {
+        $page = (int)$page_no;
     }
 
-    $start    = ($page - 1) * $per_page;
+    $start    = ((int)$page - 1) * (int) $per_page;
     $query = '';
-
     $query = $wpdb->get_results($wpdb->prepare("SELECT a.donation_id, b.meta_value AS amount, c.meta_value AS first_name, d.meta_value AS last_name, e.meta_value AS email, f.meta_value AS donation_date, g.meta_value AS currency FROM ".$donation_meta_table." a 
     LEFT JOIN ".$donation_meta_table." b ON a.donation_id = b.donation_id
     LEFT JOIN ".$donation_meta_table." c ON a.donation_id = c.donation_id

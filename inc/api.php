@@ -25,9 +25,9 @@ function gainlove_register_api() {
       'permission_callback' => '__return_true'
     ]);
 
-    register_rest_route( $this->restBase, '/activities', [
+    register_rest_route( 'gainlove/v1', '/activities', [
       'methods'  => WP_REST_SERVER::CREATABLE,
-      'callback' => [ $this, 'get_activities' ],
+      'callback' => 'get_activities',
       'permission_callback' => '__return_true'
     ]);
 
@@ -108,8 +108,40 @@ function get_top_donors( WP_REST_Request $request ) {
 function get_activities( WP_REST_Request $request ) {
 
     $form_id = $request['form_id'];
-    $query = donation_query( $form_id, 5, 1);
+    $page_no = $request['page_no'];
+    $per_page = $request['per_page'];
+
+    $query = donation_query( $form_id, $per_page, $page_no );
+    if( ! empty( $query ) ) {
+        foreach( $query as $item ) {
+            $html = '
+            <div data-v-8c160544="">
+                <div data-v-854f8146="" data-v-8c160544="" class="transaction-item">
+                    <div data-v-854f8146="" class="transaction-item__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/default_profile_images/default_profile_2.png&quot;);"></div>
+                    <div data-v-854f8146="" class="transaction-item__content">
+                        <div data-v-854f8146="" class="transaction-item__content__info">
+                            <strong data-v-854f8146="" class="transaction-item__content__info__donor">
+                                '. $item['first_name'] .' '. $item['last_name'] .'
+                            </strong>
+                            '.__('has donated', 'gainlove').'
+                            <span data-v-854f8146="" class="transaction-item__content__info__amount">
+                                '.$item['currency'] .' '. $item['amount'].'
+                            </span> 
+                        </div>
+                        <span data-v-854f8146="" class="transaction-elapsed-time transaction-item__content__info__time">
+                            '. gainlove_time_ago( $item['donation_date'] ).'
+                        </span>
+                    </div>
+                </div>
+                <hr data-v-8c160544="" class="campaign-activities__feed__item__separator">
+            </div>
+            ';
+        }
+    }
 
     $response['html'] = $html;
+    // $response['req'] = ['page_no' => $page_no, 'per_page' => $per_page];
+    $response['query'] = $query; 
+
     return new WP_REST_Response($response, 123);
 }

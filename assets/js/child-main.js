@@ -17,7 +17,7 @@ $( document ).ready(function() {
             data: args.data,
             success: function(res) {
               console.log('Response',res);
-              if(res.html && res.target_div){
+              if(res.html){
                 if(args.type == 'html'){
                   $(args.target_div).html(res.html);
                 } else {
@@ -87,17 +87,27 @@ $( document ).ready(function() {
   * Get activities
   * 
   ************************/
-  $('#see-more-activties').on('click', function(){
+  $(document).on('click', '#see-more-activties', function(){
+
+    let per_page = $(this).data('per-page');
+    let page_no = $(this).data('page-no');
+
+    console.log('current page no==>', page_no);
+
     let data = {
       method: "POST",
       endpoint: 'activities',
       data: {
-        form_id: $('#gainlove_form_id').val()
+        form_id: $('#gainlove_form_id').val(),
+        per_page: per_page,
+        page_no: page_no
       },
-      type: 'html',
-      target_div: ''
+      type: 'append',
+      target_div: '#campaign-activities__feed'
     }
     $.fn.ajaxCall(data);
+    $('#see-more-activties').attr('data-page-no', page_no+1);
+
   });
   
 })(jQuery, window, document);
