@@ -311,11 +311,24 @@ function gainlove_register_api() {
 }
 
 
-function top_donors_query( $form_id ) {
+function top_donors_query( $form_id, $per_page = NULL, $page_no = 1 ) {
 
     global $wpdb;
     $donation_meta_table = $wpdb->prefix . 'give_donationmeta';
+
+    if( ! isset( $per_page ) ){
+        $per_page = 2; 
+    }
+
+    if( ! isset( $page_no ) ) {
+        $page = "1";
+    }else {
+        $page = $page_no;
+    }
+
+    $start    = ($page - 1) * $per_page;
     $query = '';
+
     $query = $wpdb->get_results($wpdb->prepare("SELECT a.donation_id, b.meta_value AS amount, c.meta_value AS first_name, d.meta_value AS last_name, e.meta_value AS email, f.meta_value AS donation_date, g.meta_value AS currency FROM ".$donation_meta_table." a 
     LEFT JOIN ".$donation_meta_table." b ON a.donation_id = b.donation_id
     LEFT JOIN ".$donation_meta_table." c ON a.donation_id = c.donation_id
@@ -325,12 +338,12 @@ function top_donors_query( $form_id ) {
     LEFT JOIN ".$donation_meta_table." g ON a.donation_id = g.donation_id
     WHERE b.meta_key = '_give_payment_total' 
     AND c.meta_key = '_give_donor_billing_first_name'
-    AND d.meta_key = '_give_donor_billing_last_name' 
+    AND d.meta_key = '_give_donor_billing_last_name'
     AND e.meta_key = '_give_payment_donor_email'
     AND f.meta_key = '_give_completed_date'
     AND g.meta_key = '_give_payment_currency'
-    AND a.meta_key = '_give_payment_form_id' AND a.meta_value = %d", $form_id
-                                ), ARRAY_A);
+    AND a.meta_key = '_give_payment_form_id' AND a.meta_value = %d ORDER BY amount DESC LIMIT %d, %d", $form_id
+                                ,$start, $per_page), ARRAY_A);
     return $query; 
 
 }
@@ -340,14 +353,15 @@ function get_top_donors( WP_REST_Request $request ) {
     
     $form_id = $request['form_id'];
     $data = [];
-    $query = top_donors_query( $form_id );
+    $query = top_donors_query( $form_id, 5, 1);
 
     $html = '';
-    foreach( $query as $item ) {
+    if( ! empty( $query ) ){
+        foreach( $query as $item ) {
 
             $date = date_create($item['date']);
             $since = date_format($date,"m d, Y");
-
+    
             $html .='
                 <div data-v-699f71c4="">
                     <div data-v-3697e608="" data-v-699f71c4="" class="top-donors-item">
@@ -377,8 +391,25 @@ function get_top_donors( WP_REST_Request $request ) {
                             <div data-v-3697e608="" class="top-donors-item__content__comment"></div>
                         </div>
                     </div>
+                </div>';  
+        }
+    } else {
+        $html .='
+            <div data-v-3697e608="" data-v-699f71c4="" class="top-donors-item">
+                <div data-v-3697e608="" class="top-donors-item__content">
+                    <div data-v-3697e608="" class="top-donors-item__content__info">
+                        <span data-v-3697e608="" class="top-donors-item__content__info__amount"></span>
+                        <span data-v-3697e608="">
+                            <a data-v-3697e608="" href="#" target="_blank" class="top-donors-item__content__info__donor donors-not-found">
+                                '.__('There\'s no donor on this campaign yet. Be the first to donate to this campaign!', 'gainlove').'
+                            </a>
+                        </span> 
+                        <span data-v-3697e608="" class="top-donors-item__content__info__rank"></span>
+                    </div>
+                    <div data-v-3697e608="" class="top-donors-item__content__info__registered-at"></div>
+                    <div data-v-3697e608="" class="top-donors-item__content__comment"></div>
+                </div>
             </div>';
-        
     }
 
     $response['html'] = $html;

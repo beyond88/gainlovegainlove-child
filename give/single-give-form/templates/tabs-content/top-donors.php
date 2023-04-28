@@ -8,22 +8,15 @@
          </div>
          <div data-v-3697e608="" class="top-donors-item__content">
                <div data-v-3697e608="" class="top-donors-item__content__info">
-                  <span data-v-3697e608="" class="top-donors-item__content__info__amount">
-                  <!-- SGD 10 -->
-                  </span>
-                  <!-- by -->
+                  <span data-v-3697e608="" class="top-donors-item__content__info__amount"></span>
                   <span data-v-3697e608="">
                      <a data-v-3697e608="" href="#" target="_blank" class="top-donors-item__content__info__donor">
-                     Loading... 
+                        <?php echo __('Loading...', 'gainlove'); ?> 
                      </a>
                   </span> 
-                  <span data-v-3697e608="" class="top-donors-item__content__info__rank">
-                  
-                  </span>
+                  <span data-v-3697e608="" class="top-donors-item__content__info__rank"></span>
                </div>
-               <div data-v-3697e608="" class="top-donors-item__content__info__registered-at">
-                  <!-- Giver since 04 26, 2023 -->
-               </div>
+               <div data-v-3697e608="" class="top-donors-item__content__info__registered-at"></div>
                <div data-v-3697e608="" class="top-donors-item__content__comment"></div>
          </div>
       </div>

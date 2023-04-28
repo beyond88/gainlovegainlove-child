@@ -16,24 +16,27 @@
             <span data-v-586aba14="" data-v-3bb18fd3="" class="campaign-cta__button__count"></span>
         </button>
         <div data-v-0ca5f774="" data-v-0d4425d0="">
-            <div data-v-646760a4="" data-v-7ddbc005="" data-v-0ca5f774="" class="dialog-box js-dialogBoxWrapper" style="position: fixed; display: none;">
+            <div data-v-646760a4="" data-v-7ddbc005="" data-v-0ca5f774="" class="dialog-box js-dialogBoxWrapper campaign-share-success" style="position: fixed; display: none;">
                 <div data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container js-dialog-content">
-                    <h3 data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__header"><span data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__header__text">
-                        Successfully shared!
-                        </span> <span data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__header__text">
-                        You're awesome :)
+                    <h3 data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__header">
+                        <span data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__header__text">
+                            <?php echo __('Successfully shared!', 'gainlove'); ?>
+                        </span> 
+                        <span data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__header__text">
+                            <?php echo __('You\'re awesome :)', 'gainlove'); ?>
                         </span>
                     </h3>
                     <p data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__lead">
-                        Thank you for helping to spread the word!
+                        <?php echo __('Thank you for helping to spread the word!', 'gainlove'); ?>
                     </p>
                     <div data-v-7ddbc005="" data-v-646760a4="" class="shared-successful-dialog__container__button-container">
-                        <button data-v-3bb18fd3="" data-v-7ddbc005="" type="button" class="loading-button shared-successful-dialog__container__button-container__button-close" data-v-646760a4="">
-                        Close
+                        <button data-v-3bb18fd3="" data-v-7ddbc005="" type="button" class="loading-button shared-successful-dialog__container__button-container__button-close" data-v-646760a4="" onClick="showHideContent('.campaign-share-success', '')">
+                            <?php echo __('Close', 'gainlove'); ?>
                         </button>
                     </div>
                 </div>
             </div>
+
             <div data-v-0ca5f774="" class="campaign-share-dialog__lightbox js--dismiss-el bottom-donate-share-part" style="display: none;">
                 <div data-v-0ca5f774="" class="campaign-share-dialog__modal">
                     <button data-v-3bb18fd3="" data-v-0ca5f774="" type="button" class="loading-button campaign-share-dialog__modal__dismiss-button js--dismiss-el loading-button--flat loading-button--gray" onClick="showHideContent('.bottom-donate-share-part', '')">
@@ -57,7 +60,7 @@
                             ?>
                             <div data-v-fd8b712e="" class="social-media-share__share-buttons">
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                    <a data-v-fd8b712e="" href="https://api.whatsapp.com/send?text=<?php echo $share_url; ?>" data-action="share/whatsapp/share" target="_blank">
+                                    <a data-v-fd8b712e="" href="https://api.whatsapp.com/send?text=<?php echo $share_url; ?>" data-action="share/whatsapp/share" target="_blank" onClick="showHideContent('.bottom-donate-share-part', '.campaign-share-success')">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button whatsapp-button loading-button--flat loading-button--rounded-full loading-button--transparent">
                                             <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-whatsapp_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
@@ -65,7 +68,7 @@
                                     </a>
                                 </div>
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                    <a data-v-fd8b712e="" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink($form_id)) ?>" target="_blank">
+                                    <a data-v-fd8b712e="" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink($form_id)) ?>" target="_blank" onClick="showHideContent('.bottom-donate-share-part', '.campaign-share-success')">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button facebook-button loading-button--flat loading-button--rounded-full loading-button--transparent">
                                             <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-fb_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
@@ -73,7 +76,7 @@
                                     </a>
                                 </div>
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                    <a data-v-fd8b712e="" href="https://t.me/share/url?url=<?php echo $share_url; ?>" target="_blank">
+                                    <a data-v-fd8b712e="" href="https://t.me/share/url?url=<?php echo $share_url; ?>" target="_blank" onClick="showHideContent('.bottom-donate-share-part', '.campaign-share-success')">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button telegram-button loading-button--flat loading-button--rounded-full loading-button--transparent">
                                             <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-telegram_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
@@ -81,7 +84,7 @@
                                     </a>
                                 </div>
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                    <a data-v-fd8b712e="" href="https://twitter.com/intent/tweet?text=<?php echo $share_url; ?>" target="_blank">
+                                    <a data-v-fd8b712e="" href="https://twitter.com/intent/tweet?text=<?php echo $share_url; ?>" target="_blank" onClick="showHideContent('.bottom-donate-share-part', '.campaign-share-success')">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button twitter-button loading-button--flat loading-button--rounded-full loading-button--transparent">
                                             <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-twitter_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
@@ -89,7 +92,7 @@
                                     </a>
                                 </div>
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
-                                    <a data-v-fd8b712e="" href="mailto:type%20email%20address%20here?subject=I am supporting this fundraising page - <?php echo get_the_title(); ?>&body=<?php echo get_the_excerpt(); ?>%20%20%2D%20%20%28%20<?php the_permalink(); ?>%20%29" target="_blank">
+                                    <a data-v-fd8b712e="" href="mailto:type%20email%20address%20here?subject=I am supporting this fundraising page - <?php echo get_the_title(); ?>&body=<?php echo get_the_excerpt(); ?>%20%20%2D%20%20%28%20<?php the_permalink(); ?>%20%29" target="_blank" onClick="showHideContent('.bottom-donate-share-part', '.campaign-share-success')">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button email-button loading-button--flat loading-button--rounded-full loading-button--transparent">
                                             <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-email_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
