@@ -110,12 +110,13 @@ function get_activities( WP_REST_Request $request ) {
     $form_id = $request['form_id'];
     $page_no = $request['page_no'];
     $per_page = $request['per_page'];
+    $html = '';
 
     $query = donation_query( $form_id, $per_page, $page_no );
     if( ! empty( $query ) ) {
         foreach( $query as $item ) {
-            $html = '
-            <div data-v-8c160544="">
+            $html .= '
+            <div data-v-8c160544="" id="'. $item['donation_id'] .'">
                 <div data-v-854f8146="" data-v-8c160544="" class="transaction-item">
                     <div data-v-854f8146="" class="transaction-item__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/default_profile_images/default_profile_2.png&quot;);"></div>
                     <div data-v-854f8146="" class="transaction-item__content">
@@ -140,8 +141,5 @@ function get_activities( WP_REST_Request $request ) {
     }
 
     $response['html'] = $html;
-    // $response['req'] = ['page_no' => $page_no, 'per_page' => $per_page];
-    $response['query'] = $query; 
-
     return new WP_REST_Response($response, 123);
 }

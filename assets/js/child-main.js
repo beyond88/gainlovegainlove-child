@@ -10,7 +10,7 @@ $( document ).ready(function() {
      ************************/
     $.fn.ajaxCall = function(args) {
         $.ajax({
-            type: args.method,
+            method: args.method,
             dataType: 'json',
             headers: {'X-WP-Nonce': gainlove_ajax.apiNonce },
             url: gainlove_ajax.gainloveApiURL+args.endpoint,
@@ -18,7 +18,7 @@ $( document ).ready(function() {
             success: function(res) {
               console.log('Response',res);
               if(res.html){
-                if(args.type == 'html'){
+                if(args.print == 'html'){
                   $(args.target_div).html(res.html);
                 } else {
                   $(args.target_div).append(res.html);
@@ -50,7 +50,7 @@ $( document ).ready(function() {
                   data: {
                     form_id: $('#gainlove_form_id').val()
                   },
-                  type: 'html', 
+                  print: 'html', 
                   target_div: '.campaign-top-donors__feed'
                 }
                 $.fn.ajaxCall(data);
@@ -90,10 +90,7 @@ $( document ).ready(function() {
   $(document).on('click', '#see-more-activties', function(){
 
     let per_page = $(this).data('per-page');
-    let page_no = $(this).data('page-no');
-
-    console.log('current page no==>', page_no);
-
+    let page_no = $(this).attr('data-page-no');
     let data = {
       method: "POST",
       endpoint: 'activities',
@@ -102,11 +99,12 @@ $( document ).ready(function() {
         per_page: per_page,
         page_no: page_no
       },
-      type: 'append',
+      print: 'append',
       target_div: '#campaign-activities__feed'
     }
     $.fn.ajaxCall(data);
-    $('#see-more-activties').attr('data-page-no', page_no+1);
+    $('#see-more-activties').attr('data-page-no', parseInt(page_no)+1);
+    console.log('current page no==>', page_no);
 
   });
   
