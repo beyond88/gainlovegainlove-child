@@ -31,11 +31,11 @@ function gainlove_register_api() {
       'permission_callback' => '__return_true'
     ]);
 
-    // register_rest_route( $this->restBase, '/create-campaign', [
-    //   'methods'  => WP_REST_SERVER::CREATABLE,
-    //   'callback' => [ $this->campaignApi, 'create_campaign' ],
-    //   'permission_callback' => '__return_true'
-    // ]);
+    register_rest_route( 'gainlove/v1', '/testimonials', [
+        'methods'  => WP_REST_SERVER::CREATABLE,
+        'callback' => 'get_testimonials',
+        'permission_callback' => '__return_true'
+    ]);
 
 }
 
@@ -147,6 +147,16 @@ function get_activities( WP_REST_Request $request ) {
             </style>
         ';
     }
+
+    $response['html'] = $html;
+    return new WP_REST_Response($response, 123);
+}
+
+function get_testimonials( WP_REST_Request $request ) {
+
+    $form_id = $request['form_id'];
+    $html = '';
+    
 
     $response['html'] = $html;
     return new WP_REST_Response($response, 123);

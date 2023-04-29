@@ -2,7 +2,9 @@
     <div data-v-8c160544="" class="campaign-activities__feed" id="campaign-activities__feed">
         <?php 
         
-        $donors = donation_query( $form_id, 5, 1 );
+        $per_page = 5;
+        $page_no = 1; 
+        $donors = donation_query( $form_id, $per_page, $page_no );
         if( ! empty( $donors ) ) {
             foreach( $donors as $item ) {
         ?>
@@ -33,6 +35,7 @@
         </div>
         <?php } ?>
     </div>
+    <?php if( $total_activities > $per_page ) { ?>
     <div data-v-8c160544="" class="campaign-activities__feed">
         <div data-v-8c160544="" class="campaign-activities__feed__button-container">
             <button data-v-3bb18fd3="" data-v-8c160544="" type="button" class="loading-button campaign-activities__feed__button-container__button loading-button--flat" id="see-more-activties" data-page-no="2" data-per-page="5">
@@ -40,4 +43,5 @@
             </button>
         </div>
     </div>
+    <?php } ?>
 </div>
