@@ -38,7 +38,7 @@
     <?php if( $total_testimonials > $per_page ) { ?>
     <div data-v-618ad9c0="" class="campaign-testimonials__feed see-more-testimonials-area">
         <div data-v-618ad9c0="" class="campaign-testimonials__feed__button-container">
-            <button data-v-3bb18fd3="" data-v-618ad9c0="" type="button" class="loading-button campaign-testimonials__feed__button-container__button loading-button--flat" id="see-more-testimonials" data-page-no="2" data-per-page="5">
+            <button data-v-3bb18fd3="" data-v-618ad9c0="" type="button" class="loading-button campaign-testimonials__feed__button-container__button loading-button--flat" id="see-more-testimonials" data-page-no="2" data-per-page="1">
                 <?php echo __('SEE MORE TESTIMONIALS', 'gainlove'); ?>
             </button>
         </div>

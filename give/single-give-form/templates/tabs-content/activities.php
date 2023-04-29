@@ -36,7 +36,7 @@
         <?php } ?>
     </div>
     <?php if( $total_activities > $per_page ) { ?>
-    <div data-v-8c160544="" class="campaign-activities__feed">
+    <div data-v-8c160544="" class="campaign-activities__feed see-more-activties-area">
         <div data-v-8c160544="" class="campaign-activities__feed__button-container">
             <button data-v-3bb18fd3="" data-v-8c160544="" type="button" class="loading-button campaign-activities__feed__button-container__button loading-button--flat" id="see-more-activties" data-page-no="2" data-per-page="5">
                 <?php echo __('SEE MORE ACTIVITIES', 'gainlove'); ?>

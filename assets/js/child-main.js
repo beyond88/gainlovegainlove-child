@@ -8,7 +8,7 @@ $( document ).ready(function() {
      * Tabs handle
      * 
      ************************/
-    $.fn.ajaxCall = function(args) {
+    $.fn.ajaxCall = async function(args) {
         $.ajax({
             method: args.method,
             dataType: 'json',
@@ -24,9 +24,19 @@ $( document ).ready(function() {
                   $(args.target_div).append(res.html);
                 }
               }
+
+              if( args.that ){
+                args.that.removeAttr('disabled');
+                args.that.children('span').remove();
+              }
+
             },
             error: function (error) {
-                console.log('fail==>', error);
+              console.log('fail==>', error);
+              if( args.that ){
+                args.that.removeAttr('disabled');
+                args.that.children('span').remove();
+              } 
             }
         });
     }
@@ -90,8 +100,11 @@ $( document ).ready(function() {
   * Get activities
   * 
   ************************/
-  $(document).on('click', '#see-more-activties', function(){
+  $(document).on('click', '#see-more-activties', async function() {
 
+    $(this).attr('disabled', 'disabled');
+    $(this).prepend('<span data-v-3bb18fd3="" class="loading-button__spinner"></span>');
+    
     let per_page = $(this).data('per-page');
     let page_no = $(this).attr('data-page-no');
     let data = {
@@ -103,20 +116,23 @@ $( document ).ready(function() {
         page_no: page_no
       },
       print: 'append',
-      target_div: '#campaign-activities__feed'
+      target_div: '#campaign-activities__feed',
+      that: $(this)
     }
-    $.fn.ajaxCall(data);
+    await $.fn.ajaxCall(data);
     $('#see-more-activties').attr('data-page-no', parseInt(page_no)+1);
-    console.log('current page no==>', page_no);
 
   });
 
   /************************
   * 
-  * Get activities
+  * Get testimonial
   * 
   ************************/
-  $(document).on('click', '#see-more-testimonials', function(){
+  $(document).on('click', '#see-more-testimonials', async function(){
+
+    $(this).attr('disabled', 'disabled');
+    $(this).prepend('<span data-v-3bb18fd3="" class="loading-button__spinner"></span>');
 
     let per_page = $(this).data('per-page');
     let page_no = $(this).attr('data-page-no');
@@ -129,11 +145,12 @@ $( document ).ready(function() {
         page_no: page_no
       },
       print: 'append',
-      target_div: '#campaign-testimonials__feed'
+      target_div: '#campaign-testimonials__feed',
+      that: $(this)
     }
-    $.fn.ajaxCall(data);
-    $('#see-more-testimonials').attr('data-page-no', parseInt(page_no)+1);
+    await $.fn.ajaxCall(data);
 
+    $('#see-more-testimonials').attr('data-page-no', parseInt(page_no)+1);
   });
   
 })(jQuery, window, document);

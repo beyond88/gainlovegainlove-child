@@ -141,9 +141,9 @@ function get_activities( WP_REST_Request $request ) {
     } else {
         $html .='
             <style type="text/css">
-            .campaign-activities__feed__button-container{
-                display:none;
-            }
+                .see-more-activties-area{
+                    display:none;
+                }
             </style>
         ';
     }
@@ -186,7 +186,7 @@ function get_testimonials( WP_REST_Request $request ) {
             </div>
             ';
         }
-            
+
     } else {
         $html .='
             <style type="text/css">
@@ -198,6 +198,5 @@ function get_testimonials( WP_REST_Request $request ) {
     }
 
     $response['html'] = $html;
-    $response['query'] = $query;
     return new WP_REST_Response($response, 123);
 }
