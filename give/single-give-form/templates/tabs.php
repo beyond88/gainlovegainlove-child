@@ -7,6 +7,13 @@
         } else {
             $total_activities = 0;
         }
+
+        $total_testimonials = testimonials_query( $form_id, 500000000000, 1 ); 
+        if( count($total_testimonials) ) {
+            $total_testimonials = thousands_currency_format( count( $total_testimonials )  );
+        } else {
+            $total_testimonials = 0;
+        }
     ?>
 
     <div data-v-41aa2c30="" class="campaign-tabs__outer">

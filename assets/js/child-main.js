@@ -110,6 +110,31 @@ $( document ).ready(function() {
     console.log('current page no==>', page_no);
 
   });
+
+  /************************
+  * 
+  * Get activities
+  * 
+  ************************/
+  $(document).on('click', '#see-more-testimonials', function(){
+
+    let per_page = $(this).data('per-page');
+    let page_no = $(this).attr('data-page-no');
+    let data = {
+      method: "POST",
+      endpoint: 'testimonials',
+      data: {
+        form_id: $('#gainlove_form_id').val(),
+        per_page: per_page,
+        page_no: page_no
+      },
+      print: 'append',
+      target_div: '#campaign-testimonials__feed'
+    }
+    $.fn.ajaxCall(data);
+    $('#see-more-testimonials').attr('data-page-no', parseInt(page_no)+1);
+
+  });
   
 })(jQuery, window, document);
 

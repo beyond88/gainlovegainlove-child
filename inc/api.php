@@ -155,9 +155,49 @@ function get_activities( WP_REST_Request $request ) {
 function get_testimonials( WP_REST_Request $request ) {
 
     $form_id = $request['form_id'];
+    $page_no = $request['page_no'];
+    $per_page = $request['per_page'];
     $html = '';
     
+    $query = testimonials_query( $form_id, $per_page, $page_no );
+
+    if( ! empty( $query ) ) {
+        foreach( $query as $item ) {
+            $html .= '
+            <div data-v-618ad9c0="">
+                <div data-v-7eca26c6="" data-v-618ad9c0="" class="transaction-item">
+                    <a data-v-7eca26c6="" href="#">
+                        <div data-v-7eca26c6="" class="transaction-item__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664443009/assets/images/default_profile_images/default_profile_5.png&quot;);"></div>
+                    </a>
+                    <div data-v-7eca26c6="" class="transaction-item__content">
+                        <div data-v-7eca26c6="" class="transaction-item__content__info">
+                            <span data-v-7eca26c6="">
+                                <a data-v-7eca26c6="" href="https://give.asia/user/hgohl0lanh1682143728" target="_blank" class="transaction-item__content__info__donor">
+                                    '.$item['name'].'
+                                </a>
+                            </span>
+                        </div>
+                        <div data-v-7eca26c6="" class="transaction-item__content__comment">
+                            '.$item['comment_content'].'
+                        </div>
+                    </div>
+                </div>
+                <hr data-v-618ad9c0="" class="campaign-testimonials__feed__item__separator">
+            </div>
+            ';
+        }
+            
+    } else {
+        $html .='
+            <style type="text/css">
+                .see-more-testimonials-area {
+                    display:none;
+                }
+            </style>
+        ';
+    }
 
     $response['html'] = $html;
+    $response['query'] = $query;
     return new WP_REST_Response($response, 123);
 }
