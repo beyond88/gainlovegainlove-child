@@ -1,17 +1,18 @@
 <div data-v-e9cf4a2a="" class="campaign-testimonials campaign-tab" id="campaign-testimonials">
     <div data-v-618ad9c0="" class="campaign-testimonials__feed" id="campaign-testimonials__feed">
     <?php 
-        
         $per_page = 1;
         $page_no = 1; 
         $testimonials = testimonials_query( $form_id, $per_page, $page_no );
         if( ! empty( $testimonials ) ) {
             foreach( $testimonials as $item ) {
+                $random = mt_rand(1, 20);
+                $avatar_url = "https://www.gravatar.com/avatar/".$random."?s=32&d=identicon&r=PG";
         ?>
         <div data-v-618ad9c0="">
             <div data-v-7eca26c6="" data-v-618ad9c0="" class="transaction-item">
                 <a data-v-7eca26c6="" href="#">
-                    <div data-v-7eca26c6="" class="transaction-item__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664443009/assets/images/default_profile_images/default_profile_5.png&quot;);"></div>
+                    <div data-v-7eca26c6="" class="transaction-item__thumbnail" style="background-image: url(&quot;<?php echo esc_url($avatar_url); ?>&quot;);"></div>
                 </a>
                 <div data-v-7eca26c6="" class="transaction-item__content">
                     <div data-v-7eca26c6="" class="transaction-item__content__info">
@@ -31,7 +32,7 @@
         <?php } 
             } else { ?>
         <div data-v-e9cf4a2a="" class="campaign-story__description">
-            <?php echo __('There\'s no activities on this campaign yet. Join as a donor and request for an activities!', 'gainlove'); ?>
+            <?php echo __('There\'s no testimonials on this campaign yet. Join as a donor and give a testimonials!', 'gainlove'); ?>
         </div>
         <?php } ?>
     </div>

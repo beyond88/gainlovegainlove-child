@@ -45,18 +45,21 @@ function get_top_donors( WP_REST_Request $request ) {
     $query = donation_query( $form_id, 5, 1);
 
     $html = '';
-    if( ! empty( $query ) ){
+    if( ! empty( $query ) ) {
         foreach( $query as $item ) {
 
             $date = date_create($item['date']);
             $since = date_format($date,"m d, Y");
+
+            $random = mt_rand(1, 20);
+            $avatar_url = "https://www.gravatar.com/avatar/".$random."?s=32&d=identicon&r=PG";
     
             $html .='
                 <div data-v-699f71c4="">
                     <div data-v-3697e608="" data-v-699f71c4="" class="top-donors-item">
                         <div data-v-3697e608="" class="top-donors-item__thumbnail-container">
                             <a data-v-3697e608="" href="#" class="top-donors-item__user-link">
-                                <div data-v-3697e608="" class="top-donors-item__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664443009/assets/images/default_profile_images/default_profile_1.png&quot;);"></div>
+                                <div data-v-3697e608="" class="top-donors-item__thumbnail" style="background-image: url(&quot;'.$avatar_url.'&quot;);"></div>
                             </a>
                         </div>
                         <div data-v-3697e608="" class="top-donors-item__content">
@@ -115,10 +118,14 @@ function get_activities( WP_REST_Request $request ) {
     $query = donation_query( $form_id, $per_page, $page_no );
     if( ! empty( $query ) ) {
         foreach( $query as $item ) {
+
+            $random = mt_rand(1, 20);
+            $avatar_url = "https://www.gravatar.com/avatar/".$random."?s=32&d=identicon&r=PG";
+
             $html .= '
             <div data-v-8c160544="" id="'. $item['donation_id'] .'">
                 <div data-v-854f8146="" data-v-8c160544="" class="transaction-item">
-                    <div data-v-854f8146="" class="transaction-item__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/default_profile_images/default_profile_2.png&quot;);"></div>
+                    <div data-v-854f8146="" class="transaction-item__thumbnail" style="background-image: url(&quot;'.$avatar_url.'&quot;);"></div>
                     <div data-v-854f8146="" class="transaction-item__content">
                         <div data-v-854f8146="" class="transaction-item__content__info">
                             <strong data-v-854f8146="" class="transaction-item__content__info__donor">
@@ -163,16 +170,19 @@ function get_testimonials( WP_REST_Request $request ) {
 
     if( ! empty( $query ) ) {
         foreach( $query as $item ) {
+            $random = mt_rand(1, 20);
+            $avatar_url = "https://www.gravatar.com/avatar/".$random."?s=32&d=identicon&r=PG";
+
             $html .= '
             <div data-v-618ad9c0="">
                 <div data-v-7eca26c6="" data-v-618ad9c0="" class="transaction-item">
                     <a data-v-7eca26c6="" href="#">
-                        <div data-v-7eca26c6="" class="transaction-item__thumbnail" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664443009/assets/images/default_profile_images/default_profile_5.png&quot;);"></div>
+                        <div data-v-7eca26c6="" class="transaction-item__thumbnail" style="background-image: url(&quot;'.$avatar_url.'&quot;);"></div>
                     </a>
                     <div data-v-7eca26c6="" class="transaction-item__content">
                         <div data-v-7eca26c6="" class="transaction-item__content__info">
                             <span data-v-7eca26c6="">
-                                <a data-v-7eca26c6="" href="https://give.asia/user/hgohl0lanh1682143728" target="_blank" class="transaction-item__content__info__donor">
+                                <a data-v-7eca26c6="" href="#" target="_blank" class="transaction-item__content__info__donor">
                                     '.$item['name'].'
                                 </a>
                             </span>
