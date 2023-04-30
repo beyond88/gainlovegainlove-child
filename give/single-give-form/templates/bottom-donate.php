@@ -2,9 +2,10 @@
     <div data-v-00230a7a="" class="campaign-cta-donors__header">
         <?php echo get_the_title(); ?>
     </div>
+
     <div data-v-586aba14="" data-v-e9cf4a2a="" class="campaign-cta campaign-cta-donors__cta" data-v-00230a7a="">
         <div data-v-586aba14="" class="campaign-cta__primary-link-container campaign-cta__primary-link-container--donors-position">
-            <a data-v-586aba14="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/donate?" class="campaign-cta__primary-link">
+            <a data-v-586aba14="" href="<?php echo esc_url($donate_url); ?>" class="campaign-cta__primary-link">
                 <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__button">
                     <?php echo __('PLEASE DONATE', 'gainlove'); ?>
                 </button>

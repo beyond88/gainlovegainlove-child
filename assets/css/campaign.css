@@ -12616,6 +12616,11 @@
   cursor: pointer;
 }
 
-.campaign-fundraiser__header{
+.campaign-fundraiser__header {
   color: #000;
+}
+
+.give-display-onpage .give-form-title {
+  /* color: #000 !important; */
+  display: none;
 }

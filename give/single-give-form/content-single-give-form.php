@@ -1,6 +1,6 @@
 <?php 
 
-$form_id = get_the_ID();
+$form_id     = get_the_ID();
 $form        = new Give_Donate_Form($form_id);
 $goal_option = give_get_meta($form->ID, '_give_goal_option', true);
 
@@ -84,35 +84,50 @@ $days = floor(-$diff / (60 * 60 * 24));
 $author_id = get_post_field( 'post_author', $form_id );
 $avatar = get_avatar_url($author_id, ['size' => '40']);
 
+$donate_url = get_permalink($form_id);
+$donate_url .='?amount';
+
 ?>
-<div class="campaign-page">
-   <div class="campaign-page__container">
+<div class="campaign-page" <?php if( isset( $_GET['amount'] ) ){ ?>style="background-color:#fff;"<?php } ?>>
+   <?php if( isset($_GET['amount']) ) : ?>
 
-      <?php include 'templates/content.php'; ?>
+      <div class="campaign-page__container">
+         <?php give_get_donation_form($form_id); ?>
+      </div>
 
-      <div class="campaign-page__container__col campaign-page__container__col--sidebar">
-         
-         <div data-v-44d4f274="" class="campaign-sidebar">
+   <?php else : ?>
+
+      <div class="campaign-page__container">
+
+         <?php include 'templates/content.php'; ?>
+
+         <div class="campaign-page__container__col campaign-page__container__col--sidebar">
             
-            <?php include 'templates/campaign-info.php'; ?>
+            <div data-v-44d4f274="" class="campaign-sidebar">
+               
+               <?php include 'templates/campaign-info.php'; ?>
 
-            <?php include 'templates/testimonials.php'; ?>
+               <?php include 'templates/testimonials.php'; ?>
 
-            <?php include 'templates/donors.php'; ?>
+               <?php include 'templates/donors.php'; ?>
 
-            <div data-v-1bd85365="" data-v-44d4f274="" class="campaign-extra-details">
+               <div data-v-1bd85365="" data-v-44d4f274="" class="campaign-extra-details">
 
-               <?php include 'templates/verified.php'; ?>
-             
-               <?php include 'templates/boosting.php'; ?>
+                  <?php include 'templates/verified.php'; ?>
+               
+                  <?php include 'templates/boosting.php'; ?>
 
-               <?php include 'templates/fundraiser.php'; ?>
+                  <?php include 'templates/fundraiser.php'; ?>
 
+               </div>
             </div>
          </div>
+         
       </div>
-   </div>
+
+      <?php include 'templates/similiar-campaigns.php'; ?>
+
+   <?php endif; ?>
    
-   <?php include 'templates/similiar-campaigns.php'; ?>
    <input type="hidden" id="gainlove_form_id" value="<?php echo $form_id; ?>">
 </div>

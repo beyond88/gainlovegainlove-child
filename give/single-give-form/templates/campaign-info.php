@@ -85,7 +85,7 @@
     </div>
     <div data-v-586aba14="" data-v-44d4f274="" class="campaign-cta">
         <div data-v-586aba14="" class="campaign-cta__primary-link-container">
-            <a data-v-586aba14="" href="https://give.asia/campaign/give-my-premature-twins-a-chance/donate?" class="campaign-cta__primary-link">
+            <a data-v-586aba14="" href="<?php echo esc_url($donate_url); ?>" class="campaign-cta__primary-link">
                 <button data-v-3bb18fd3="" data-v-586aba14="" type="button" class="loading-button campaign-cta__button">
                     <?php echo __('PLEASE DONATE', 'gainlove'); ?>
                 </button>
