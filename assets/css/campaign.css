@@ -66,7 +66,7 @@
 }
 
 :root {
-  --giviki-color: #eb008c;
+  --giviki-color: #ff9f0d;
 }
 
 @keyframes spinner-data-v-3bb18fd3 {
@@ -3417,10 +3417,6 @@
   margin-bottom: 10px;
   margin-top: 10px;
 }
-.campaign-progress__bar__progress[data-v-6e670434] {
-  height: 100%;
-  border-radius: 5px;
-}
 .campaign-progress__bar__milestones[data-v-6e670434] {
   position: absolute;
   top: -7px;
@@ -3460,10 +3456,7 @@
   font-weight: 700;
   line-height: 140%;
 }
-.campaign-trust-and-safety a[data-v-609ffe99] {
-  color: #eb008c;
-  text-decoration: none;
-}
+
 @keyframes spinner-data-v-0f80c597 {
   to {
     transform: rotate(360deg);
@@ -3483,10 +3476,7 @@
   font-weight: 700;
   line-height: 140%;
 }
-.campaign-giving-guarantee a[data-v-0f80c597] {
-  color: #eb008c;
-  text-decoration: none;
-}
+
 @keyframes spinner-data-v-4fe81988 {
   to {
     transform: rotate(360deg);
@@ -6787,7 +6777,7 @@
   line-height: 140%;
 }
 .campaign-trust-and-safety a[data-v-609ffe99] {
-  color: #eb008c;
+  color: #ff9f0d;
   text-decoration: none;
 }
 @keyframes spinner-data-v-0f80c597 {
@@ -6813,6 +6803,7 @@
   color: #eb008c;
   text-decoration: none;
 }
+
 @keyframes spinner-data-v-4fe81988 {
   to {
     transform: rotate(360deg);
@@ -7708,7 +7699,7 @@
   margin-top: 0 !important;
 }
 .campaign-cta__button--orange[data-v-586aba14] {
-  background-color: #efa96d !important;
+  background-color: rgb(0, 0, 0, 0.6) !important;
   position: relative;
 }
 .campaign-cta__button--green[data-v-586aba14] {
@@ -9113,12 +9104,6 @@
     padding-top: 5px;
   }
 }
-.campaign-owner__link[data-v-045fc0d9] {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 24px;
-  text-decoration: none;
-}
 .campaign-owner__info[data-v-045fc0d9] {
   padding-left: 10px;
   width: 100%;
@@ -9241,7 +9226,7 @@
   margin-right: 5px;
 }
 .campaign-extra-details__verification__header__name[data-v-1bd85365] {
-  color: #eb008c;
+  color: var(--giviki-color);
 }
 .campaign-extra-details__verification__text[data-v-1bd85365] {
   font-size: 14px;
@@ -9253,7 +9238,7 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 24px;
-  color: #eb008c;
+  color: var(--giviki-color);
   cursor: pointer;
   text-decoration: none;
 }

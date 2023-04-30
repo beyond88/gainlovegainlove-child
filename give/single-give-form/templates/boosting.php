@@ -6,7 +6,7 @@
         </div>
         <div data-v-23eb39d5="" class="campaign-boost-status__text">
             <?php echo __('The fundraiser has opted to allocate up to 10% of funds raised for Facebook marketing to create more awareness, helping the campaign reach more people and hit the campaign goal.', 'gainlove'); ?>
-            <span data-v-23eb39d5="" class="campaign-boost-status__text__link" style="color: rgb(235, 0, 140);" onclick="showHideContent('','.campaign-page__dialog__lightbox')">
+            <span data-v-23eb39d5="" class="campaign-boost-status__text__link" style="color: #ff9f0d;" onclick="showHideContent('','.campaign-page__dialog__lightbox')">
                 <?php echo __('LEARN MORE', 'gainlove'); ?>
             </span>
         </div>

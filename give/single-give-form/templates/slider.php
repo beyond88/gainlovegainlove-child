@@ -21,7 +21,7 @@
         </div> -->
     </div>
 
-    <a data-v-11dd9319="" data-v-1d3087a2="" href="#" class="childmed-blurb">
+    <!-- <a data-v-11dd9319="" data-v-1d3087a2="" href="#" class="childmed-blurb">
         <div data-v-11dd9319="" class="childmed-blurb__container">
             <div data-v-11dd9319="" class="childmed-blurb__logo-container">
             <img data-v-11dd9319="" alt="ChildMed" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/movement/childmed/square-logo.png" srcset="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/movement/childmed/square-logo_2x.png 2x, https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/movement/childmed/square-logo_3x.png 3x" class="childmed-logo childmed-blurb__logo">
@@ -36,7 +36,7 @@
                 <div data-v-11dd9319="" class="childmed-blurb__button-container"><i data-v-11dd9319="" class="fas fa-chevron-right"></i></div>
             </div>
         </div>
-    </a>
+    </a> -->
     
     <?php include 'tabs.php'; ?>
 </div>

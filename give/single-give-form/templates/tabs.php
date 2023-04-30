@@ -23,11 +23,11 @@
             </a> 
             <a data-v-41aa2c30="" href="javascript:void(0);" data-tab-id="campaign-updates" class="campaign-tabs__tab campaign-tabs__tab--updates campaign-tabs__tab--unselected">
                 <?php echo __('Updates', 'gainlove'); ?>
-                <span data-v-41aa2c30="" class="campaign-tabs__tab__count campaign-tabs__tab__count--unselected" style="background-color: rgb(235, 0, 140);">0</span>
+                <span data-v-41aa2c30="" class="campaign-tabs__tab__count campaign-tabs__tab__count--unselected" style="background-color: #ff9f0d;">0</span>
             </a> 
             <a data-v-41aa2c30="" href="javascript:void(0);" data-tab-id="campaign-activities" class="campaign-tabs__tab campaign-tabs__tab--activities campaign-tabs__tab--unselected">
                 <?php echo __('Activities', 'gainlove'); ?>
-                <span data-v-41aa2c30="" class="campaign-tabs__tab__count campaign-tabs__tab__count--unselected" style="background-color: rgb(235, 0, 140);">
+                <span data-v-41aa2c30="" class="campaign-tabs__tab__count campaign-tabs__tab__count--unselected" style="background-color: #ff9f0d;">
                     <?php echo $total_activities; ?>
                 </span>
             </a> 
