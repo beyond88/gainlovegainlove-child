@@ -6,9 +6,12 @@
          if( ! empty( $donors ) ) {
             $i = 0;
             foreach( $donors as $item ) {
+
+               $random = mt_rand(1, 20);
+               $avatar_url = "https://www.gravatar.com/avatar/".$random."?s=32&d=identicon&r=PG";
       ?>
       <div data-v-00230a7a="" class="campaign-cta-donors__donors__item">
-         <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__profile-picture" style="background-image: url(&quot;https://res.cloudinary.com/dmajhtvmd/image/upload/v1664443009/assets/images/default_profile_images/default_profile_1.png&quot;);"></div>
+         <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__profile-picture" style="background-image: url(&quot;<?php echo esc_url($avatar_url); ?>&quot;);"></div>
          <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__content">
             <div data-v-00230a7a="" class="campaign-cta-donors__donors__item__content__donor-name">
                <span data-v-00230a7a="">

@@ -52,7 +52,7 @@ function get_top_donors( WP_REST_Request $request ) {
             $since = date_format($date,"m d, Y");
 
             $random = mt_rand(1, 20);
-            $avatar_url = "https://www.gravatar.com/avatar/".$random."?s=32&d=identicon&r=PG";
+            $avatar_url = "https://www.gravatar.com/avatar/".$random."?s=64&d=identicon&r=PG";
     
             $html .='
                 <div data-v-699f71c4="">
