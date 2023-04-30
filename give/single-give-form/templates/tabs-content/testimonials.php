@@ -1,7 +1,7 @@
 <div data-v-e9cf4a2a="" class="campaign-testimonials campaign-tab" id="campaign-testimonials">
     <div data-v-618ad9c0="" class="campaign-testimonials__feed" id="campaign-testimonials__feed">
     <?php 
-        $per_page = 1;
+        $per_page = 5;
         $page_no = 1; 
         $testimonials = testimonials_query( $form_id, $per_page, $page_no );
         if( ! empty( $testimonials ) ) {

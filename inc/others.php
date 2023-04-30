@@ -182,7 +182,7 @@ function get_similiar_campaigns( $post_id ) {
                             </div>
                         </div>
                         <div data-v-7f9117ba="" class="campaign-card__footer__progress-bar">
-                            <div data-v-7f9117ba="" class="campaign-card__footer__progress-bar__progress" style="width: '.esc_attr(round($progress)).'%; background-color: rgb(235, 0, 140);"></div>
+                            <div data-v-7f9117ba="" class="campaign-card__footer__progress-bar__progress" style="width: '.esc_attr(round($progress)).'%; background-color: #ff9f0d;"></div>
                         </div>
                         <div data-v-7f9117ba="" class="campaign-card__footer__progress-text">
                             <div data-v-7f9117ba="" class="campaign-card__footer__progress-text__container">
