@@ -36,6 +36,6 @@ Gainlove Nonprofit WordPress Theme is a  clean and professional WordPress Theme 
 
 <p dir="auto">
   <a target="_blank" rel="noopener noreferrer" href="">
-    <img src="https://github.com/beyond88/reading-time/blob/main/assets/img/reading-time-calculator.png"><img src="https://github.com/beyond88/reading-time/raw/main/assets/img/reading-time-calculator.png" alt="Reading time calculator" style="max-width: 100%;">
+    <img src="https://github.com/beyond88/reading-time/blob/main/assets/img/reading-time-calculator.png">
   </a>
 </p>
