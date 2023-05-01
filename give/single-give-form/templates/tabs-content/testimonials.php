@@ -17,7 +17,7 @@
                 <div data-v-7eca26c6="" class="transaction-item__content">
                     <div data-v-7eca26c6="" class="transaction-item__content__info">
                         <span data-v-7eca26c6="">
-                            <a data-v-7eca26c6="" href="https://give.asia/user/hgohl0lanh1682143728" target="_blank" class="transaction-item__content__info__donor">
+                            <a data-v-7eca26c6="" href="#" target="_blank" class="transaction-item__content__info__donor">
                                 <?php echo $item['name']; ?>
                             </a>
                         </span>

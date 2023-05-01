@@ -178,7 +178,7 @@ function get_similiar_campaigns( $post_id ) {
                         <div data-v-7f9117ba="" class="campaign-card__footer__filler"></div>
                         <div data-v-7f9117ba="" class="campaign-card__footer__owner">
                             <div data-v-7f9117ba="">
-                            By Give.Asia
+                            By Give Kindness
                             </div>
                         </div>
                         <div data-v-7f9117ba="" class="campaign-card__footer__progress-bar">

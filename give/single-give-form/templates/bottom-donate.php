@@ -63,7 +63,7 @@
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
                                     <a data-v-fd8b712e="" href="https://api.whatsapp.com/send?text=<?php echo $share_url; ?>" data-action="share/whatsapp/share" target="_blank" onClick="showHideContent('.bottom-donate-share-part', '.campaign-share-success')">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button whatsapp-button loading-button--flat loading-button--rounded-full loading-button--transparent">
-                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-whatsapp_2x.png" alt="" class="social-media-share__button-container__button__icon">
+                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="<?php echo ASSETS_URL; ?>img/shareBtn-whatsapp_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
                                         <?php echo __('Whatsapp', 'gainlove'); ?>
                                     </a>
@@ -71,7 +71,7 @@
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
                                     <a data-v-fd8b712e="" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink($form_id)) ?>" target="_blank" onClick="showHideContent('.bottom-donate-share-part', '.campaign-share-success')">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button facebook-button loading-button--flat loading-button--rounded-full loading-button--transparent">
-                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-fb_2x.png" alt="" class="social-media-share__button-container__button__icon">
+                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="<?php echo ASSETS_URL; ?>img/shareBtn-fb_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
                                         <?php echo __('Facebook', 'gainlove'); ?>
                                     </a>
@@ -79,7 +79,7 @@
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
                                     <a data-v-fd8b712e="" href="https://t.me/share/url?url=<?php echo $share_url; ?>" target="_blank" onClick="showHideContent('.bottom-donate-share-part', '.campaign-share-success')">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button telegram-button loading-button--flat loading-button--rounded-full loading-button--transparent">
-                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-telegram_2x.png" alt="" class="social-media-share__button-container__button__icon">
+                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="<?php echo ASSETS_URL; ?>img/shareBtn-telegram_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
                                         <?php echo __('Telegram', 'gainlove'); ?>
                                     </a>
@@ -87,7 +87,7 @@
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
                                     <a data-v-fd8b712e="" href="https://twitter.com/intent/tweet?text=<?php echo $share_url; ?>" target="_blank" onClick="showHideContent('.bottom-donate-share-part', '.campaign-share-success')">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button twitter-button loading-button--flat loading-button--rounded-full loading-button--transparent">
-                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-twitter_2x.png" alt="" class="social-media-share__button-container__button__icon">
+                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="<?php echo ASSETS_URL; ?>img/shareBtn-twitter_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
                                         <?php echo __('Twitter', 'gainlove'); ?>
                                     </a>
@@ -95,7 +95,7 @@
                                 <div data-v-fd8b712e="" class="social-media-share__button-container">
                                     <a data-v-fd8b712e="" href="mailto:type%20email%20address%20here?subject=I am supporting this fundraising page - <?php echo get_the_title(); ?>&body=<?php echo get_the_excerpt(); ?>%20%20%2D%20%20%28%20<?php the_permalink(); ?>%20%29" target="_blank" onClick="showHideContent('.bottom-donate-share-part', '.campaign-share-success')">
                                         <button data-v-3bb18fd3="" data-v-fd8b712e="" type="button" class="loading-button social-media-share__button-container__button email-button loading-button--flat loading-button--rounded-full loading-button--transparent">
-                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="https://res.cloudinary.com/dmajhtvmd/image/upload/v1664372687/assets/images/donate/share/shareBtn-email_2x.png" alt="" class="social-media-share__button-container__button__icon">
+                                            <img data-v-fd8b712e="" data-v-3bb18fd3="" src="<?php echo ASSETS_URL; ?>img/shareBtn-email_2x.png" alt="" class="social-media-share__button-container__button__icon">
                                         </button>
                                         <?php echo __('Email', 'gainlove'); ?>
                                     </a>
