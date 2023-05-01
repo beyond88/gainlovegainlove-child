@@ -4,4 +4,16 @@ Gainlove Nonprofit WordPress Theme is a  clean and professional WordPress Theme 
 
 ## Child theme extention
 
-### _I customized the child theme functionality following some custom requirements. The main goal of the customization is to enchance feature of give plugin template. Added endpoint to interact with clientside request like updates, activities, testimonials, and top donors. 
+#### _I customized the child theme functionality following some custom requirements. The main goal of the customization is to enchance feature of give plugin template. Added endpoint to interact with clientside request like updates, activities, testimonials, and top donors.
+
+#### Features
+- Feature image
+- Campaign info
+- Story
+- Updates
+- Activities
+- Testimonials
+- Top donors
+- Donation system
+- Share
+- Similar campaigns
