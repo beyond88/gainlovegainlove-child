@@ -17,3 +17,9 @@ Gainlove Nonprofit WordPress Theme is a  clean and professional WordPress Theme 
 - Donation system
 - Share
 - Similar campaigns
+
+#### API
+- `/updates`
+- `/activities`
+- `/testimonials`
+- `/top-donors`
