@@ -91,8 +91,16 @@ $donate_url .='?amount';
 <div class="campaign-page" <?php if( isset( $_GET['amount'] ) ){ ?>style="background-color:#fff;"<?php } ?>>
    <?php if( isset($_GET['amount']) ) : ?>
 
+      <span data-v-29a3bcb2="" class="menu-button" id="go-back-to-campaign" data-campaign-url="<?php echo get_permalink($form_id); ?>">
+         <svg data-v-29a3bcb2="" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" width="24" height="24" style="pointer-events: none; cursor: pointer; display: block;">
+            <g data-v-29a3bcb2="">
+               <path data-v-29a3bcb2="" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#666666"></path>
+            </g>
+         </svg>
+      </span>
+
       <div class="campaign-page__container">
-         <?php give_get_donation_form($form_id); ?>
+         <?php give_get_donation_form( $form_id ); ?>
       </div>
 
    <?php else : ?>

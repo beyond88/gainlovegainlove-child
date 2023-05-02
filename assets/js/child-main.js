@@ -152,6 +152,12 @@ $( document ).ready(function() {
 
     $('#see-more-testimonials').attr('data-page-no', parseInt(page_no)+1);
   });
+
+
+  $(document).on('click', '#go-back-to-campaign', function(){
+    let campaign_url = $(this).data('campaign-url');
+    window.location.href= campaign_url;
+  });
   
 })(jQuery, window, document);
 

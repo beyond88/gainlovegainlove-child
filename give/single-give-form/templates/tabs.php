@@ -1,14 +1,14 @@
 <div data-v-41aa2c30="" data-v-1d3087a2="" class="campaign-tabs campaign-nav__fixed-tabs js-fixedNavTabs">
     
     <?php 
-        $total_activities = donation_query( $form_id, 500000000000, 1 ); 
+        $total_activities = donation_query( $form_id, 50000000, 1 ); 
         if( count($total_activities) ) {
             $total_activities = thousands_currency_format( count( $total_activities )  );
         } else {
             $total_activities = 0;
         }
 
-        $total_testimonials = testimonials_query( $form_id, 500000000000, 1 ); 
+        $total_testimonials = testimonials_query( $form_id, 50000000, 1 ); 
         if( count($total_testimonials) ) {
             $total_testimonials = thousands_currency_format( count( $total_testimonials )  );
         } else {

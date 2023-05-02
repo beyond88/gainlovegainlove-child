@@ -12624,3 +12624,9 @@
   /* color: #000 !important; */
   display: none;
 }
+
+#go-back-to-campaign {
+  position: absolute;
+  top: -41px;
+  cursor: pointer;
+}

@@ -66,15 +66,20 @@ function testimonials_query( $form_id, $per_page = NULL, $page_no = 1 ) {
     }
 
     $ids = implode(',', $data);
-    $comment_type = 'donor_donation';
-    $comment_query = '';
-    $comment_query = $wpdb->get_results(
-        $wpdb->prepare(
-            "SELECT a.comment_ID, a.user_id, a.comment_content, a.comment_parent, a.comment_type, a.comment_date, a.comment_date_gmt, b.email, b.name FROM ".$give_comment_table." a
-            LEFT JOIN ".$give_donors_table." b ON a.user_id = b.user_id
-            WHERE comment_parent IN($ids) AND comment_type = %s LIMIT %d, %d", $comment_type, $start, $per_page), 
-        ARRAY_A);
+    if( ! empty($ids) ){
+        $comment_type = 'donor_donation';
+        $comment_query = '';
+        $comment_query = $wpdb->get_results(
+            $wpdb->prepare(
+                "SELECT a.comment_ID, a.user_id, a.comment_content, a.comment_parent, a.comment_type, a.comment_date, a.comment_date_gmt, b.email, b.name FROM ".$give_comment_table." a
+                LEFT JOIN ".$give_donors_table." b ON a.user_id = b.user_id
+                WHERE comment_parent IN($ids) AND comment_type = %s LIMIT %d, %d", $comment_type, $start, $per_page), 
+            ARRAY_A);
+    
+        return $comment_query;
+    }
 
-    return $comment_query; 
+    return [];
+     
 
 }
