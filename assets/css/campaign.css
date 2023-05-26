@@ -12630,3 +12630,9 @@
   top: -41px;
   cursor: pointer;
 }
+
+.give-form-wrap {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 3%;
+}
