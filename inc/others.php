@@ -272,3 +272,16 @@ function thousands_currency_format( $num ) {
   
     return $num;
 }
+
+add_action('wp_footer', 'remove_extra_field', PHP_INT_MAX);
+function remove_extra_field() {
+    ?>
+    <script>
+        jQuery(window).load(function() {
+            if( jQuery('input[name = paymentReceipt]') ) {
+                jQuery('input[name = paymentReceipt]').parent().remove();
+            }
+        });
+    </script>
+    <?php
+}
