@@ -31,7 +31,7 @@ function donation_query( $form_id, $per_page = NULL, $page_no = 1 ) {
     AND e.meta_key = '_give_payment_donor_email'
     AND f.meta_key = '_give_completed_date'
     AND g.meta_key = '_give_payment_currency'
-    AND a.meta_key = '_give_payment_form_id' AND a.meta_value = %d ORDER BY amount DESC LIMIT %d, %d", $form_id
+    AND a.meta_key = '_give_payment_form_id' AND a.meta_value = %d ORDER BY donation_date DESC LIMIT %d, %d", $form_id
                                 ,$start, $per_page), ARRAY_A);
     return $query; 
 
