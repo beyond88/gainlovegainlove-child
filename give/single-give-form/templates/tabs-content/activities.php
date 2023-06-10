@@ -9,6 +9,22 @@
             foreach( $donors as $item ) {
                 $random = mt_rand(1, 20);
                 $avatar_url = "https://www.gravatar.com/avatar/".$random."?s=32&d=identicon&r=PG";
+                $donation_id = $item['donation_id'];
+
+                $fee_amount = give_get_meta( $donation_id, '_give_fee_amount', true );
+                
+                if( ! isset( $fee_amount ) ) {
+                    $fee_amount = 0;
+                }
+
+                $tip_amount = give_get_meta( $donation_id, '_give_tip_amount', true );
+                if( ! isset( $tip_amount ) ) {
+                    $tip_amount = 0;
+                }
+
+                $amount = number_format( (float) $item['amount'], 2 );
+                $amount = ( $amount - (float) $fee_amount ) - (float) $tip_amount;
+                $amount = give_currency_filter( $amount, array( 'form_id' => $form_id ) );
         ?>
         <div data-v-8c160544="" id="<?php echo $item['donation_id']; ?>">
             <div data-v-854f8146="" data-v-8c160544="" class="transaction-item">
@@ -16,11 +32,11 @@
                 <div data-v-854f8146="" class="transaction-item__content">
                     <div data-v-854f8146="" class="transaction-item__content__info">
                         <strong data-v-854f8146="" class="transaction-item__content__info__donor">
-                            <?php echo $item['first_name'] .' '. $item['last_name']; ?>
+                            <?php echo esc_attr( $item['first_name'] ).' '. esc_attr( $item['last_name'] ); ?>
                         </strong>
                             <?php echo __('has donated', 'gainlove'); ?>
                         <span data-v-854f8146="" class="transaction-item__content__info__amount">
-                            <?php echo $item['currency'] .' '. $item['amount']; ?>
+                            <?php echo esc_attr( $amount ); ?>
                         </span> 
                     </div>
                     <span data-v-854f8146="" class="transaction-elapsed-time transaction-item__content__info__time">
