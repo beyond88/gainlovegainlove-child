@@ -53,6 +53,23 @@ function get_top_donors( WP_REST_Request $request ) {
 
             $random = mt_rand(1, 20);
             $avatar_url = "https://www.gravatar.com/avatar/".$random."?s=64&d=identicon&r=PG";
+
+            $donation_id = $item['donation_id'];
+
+            $fee_amount = give_get_meta( $donation_id, '_give_fee_amount', true );
+            
+            if( ! isset( $fee_amount ) ) {
+                $fee_amount = 0;
+            }
+
+            $tip_amount = give_get_meta( $donation_id, '_give_tip_amount', true );
+            if( ! isset( $tip_amount ) ) {
+                $tip_amount = 0;
+            }
+
+            $amount = number_format( (float) $item['amount'], 2 );
+            $amount = ( $amount - (float) $fee_amount ) - (float) $tip_amount;
+            $amount = give_currency_filter( $amount, array( 'form_id' => $form_id ) );
     
             $html .='
                 <div data-v-699f71c4="">
@@ -65,7 +82,7 @@ function get_top_donors( WP_REST_Request $request ) {
                         <div data-v-3697e608="" class="top-donors-item__content">
                             <div data-v-3697e608="" class="top-donors-item__content__info">
                                 <span data-v-3697e608="" class="top-donors-item__content__info__amount">
-                                '.$item['currency'].' '.number_format($item['amount'], 0).'
+                                '.esc_attr( $amount ).'
                                 </span>
                                 by
                                 <span data-v-3697e608="">
@@ -122,6 +139,23 @@ function get_activities( WP_REST_Request $request ) {
             $random = mt_rand(1, 20);
             $avatar_url = "https://www.gravatar.com/avatar/".$random."?s=32&d=identicon&r=PG";
 
+            $donation_id = $item['donation_id'];
+
+            $fee_amount = give_get_meta( $donation_id, '_give_fee_amount', true );
+            
+            if( ! isset( $fee_amount ) ) {
+                $fee_amount = 0;
+            }
+
+            $tip_amount = give_get_meta( $donation_id, '_give_tip_amount', true );
+            if( ! isset( $tip_amount ) ) {
+                $tip_amount = 0;
+            }
+
+            $amount = number_format( (float) $item['amount'], 2 );
+            $amount = ( $amount - (float) $fee_amount ) - (float) $tip_amount;
+            $amount = give_currency_filter( $amount, array( 'form_id' => $form_id ) );
+
             $html .= '
             <div data-v-8c160544="" id="'. $item['donation_id'] .'">
                 <div data-v-854f8146="" data-v-8c160544="" class="transaction-item">
@@ -133,7 +167,7 @@ function get_activities( WP_REST_Request $request ) {
                             </strong>
                             '.__('has donated', 'gainlove').'
                             <span data-v-854f8146="" class="transaction-item__content__info__amount">
-                                '.$item['currency'] .' '. $item['amount'].'
+                                '.esc_attr( $amount ).'
                             </span> 
                         </div>
                         <span data-v-854f8146="" class="transaction-elapsed-time transaction-item__content__info__time">
