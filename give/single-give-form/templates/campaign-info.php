@@ -55,6 +55,10 @@
                     </div>
                 </div>
             </div>
+            <?php 
+                $verification_link = get_option('give_kindness_verify_link_content');
+                print_r($verification_link);
+            ?>
             <div data-v-609ffe99="" data-v-4fe81988="" class="campaign-trust-and-safety">
                 <div data-v-609ffe99="" class="campaign-trust-and-safety__icon">
                     <img data-v-609ffe99="" src="<?php echo ASSETS_URL; ?>img/trust-safety-icon.svg" alt="trust and safety">
