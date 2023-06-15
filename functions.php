@@ -34,6 +34,13 @@ function give_kindness_settings() {
             'type' => 'wysiwyg',
         ),
         array(
+            'name' => esc_html__( 'Giving guarantee', 'givelove' ),
+            'desc' => '',
+            'default' => '',
+            'id'   => 'give_kindness_guarantee',
+            'type' => 'wysiwyg',
+        ),
+        array(
             'name' => esc_html__( 'Verified details', 'givelove' ),
             'desc' => '',
             'default' => '',

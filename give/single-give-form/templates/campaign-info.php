@@ -40,26 +40,12 @@
         </div>
     
         <div data-v-4fe81988="" data-v-2bb70eac="" class="campaign-verification-summary">
-            <div data-v-4fe81988="" class="campaign-verification-summary__item">
-                <i data-v-4fe81988="" class="campaign-verification-summary__item__icon fas fa-check"></i> 
-                <div data-v-4fe81988="" class="campaign-verification-summary__item__content">
-                    <?php echo __('VERIFIED BY', 'gainlove'); ?>
-                    <span data-v-4fe81988="" class="campaign-verification-summary__item__content__name">
-                        <?php echo bloginfo(); ?>
-                    </span> 
-                    <div data-v-4fe81988="" class="campaign-verification-summary__item__content__sup">
-                        <?php
-                            $datee = date_create($date);
-                            echo date_format($datee,"M d, Y");
-                        ?>
-                    </div>
-                </div>
-            </div>
-            <?php 
-                $verification_link = get_option('give_kindness_verify_link_content');
-                print_r($verification_link);
-            ?>
-            <div data-v-609ffe99="" data-v-4fe81988="" class="campaign-trust-and-safety">
+
+            <?php echo $verify_link_content = give_get_option( 'give_kindness_verify_link_content' ); ?>
+            
+            <?php //echo $verify_details = give_get_option( 'give_kindness_verify_details' ); ?>
+
+            <!-- <div data-v-609ffe99="" data-v-4fe81988="" class="campaign-trust-and-safety">
                 <div data-v-609ffe99="" class="campaign-trust-and-safety__icon">
                     <img data-v-609ffe99="" src="<?php echo ASSETS_URL; ?>img/trust-safety-icon.svg" alt="trust and safety">
                 </div>
@@ -67,8 +53,10 @@
                     <?php echo __('Learn more about', 'gainlove'); ?>
                     <a data-v-609ffe99="" href="#" target="_blank">Trust &amp; Safety</a>
                 </div>
-            </div>
-            <div data-v-0f80c597="" data-v-4fe81988="" class="campaign-giving-guarantee">
+            </div> -->
+            <?php echo $trust_safety = give_get_option( 'give_kindness_trust_safety' ); ?>
+           
+            <!-- <div data-v-0f80c597="" data-v-4fe81988="" class="campaign-giving-guarantee">
                 <div data-v-0f80c597="" class="campaign-giving-guarantee__icon">
                     <img data-v-0f80c597="" src="<?php echo ASSETS_URL; ?>img/giving-guarantee-icon.svg" alt="giving guarantee" style="width:19px;height:19px;">
                 </div>
@@ -78,7 +66,8 @@
                         <?php echo __('Giving Guarantee', 'gainlove'); ?>
                     </a>
                 </div>
-            </div>
+            </div> -->
+            <?php echo $guarantee = give_get_option( 'give_kindness_guarantee' ); ?>
         </div>
         <div data-v-2bb70eac="" class="campaign-info__section">
             <div data-v-2bb70eac=""><?php echo __('Donations will go to', 'gainlove'); ?> 
